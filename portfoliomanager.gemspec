@@ -1,7 +1,7 @@
 require_relative 'lib/portfolio_manager/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "portfoliomanager"
+  spec.name          = "portfoliomanager-rb"
   spec.version       = PortfolioManager::VERSION
   spec.authors       = ["Mark Borkum"]
   spec.email         = ["mark.borkum@pnnl.gov"]

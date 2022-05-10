@@ -1,6 +1,6 @@
 # ENERGY STAR Portfolio Manager - Web Services Clients in Ruby
 
-`portfoliomanager` provides clients for [ENERGY STAR Portfolio Manager Web Services](https://portfoliomanager.energystar.gov/webservices/home) for the Ruby programming language.
+`portfoliomanager-rb` provides clients for [ENERGY STAR Portfolio Manager Web Services](https://portfoliomanager.energystar.gov/webservices/home) for the Ruby programming language.
 
 A short rundown of some of the major features:
 * 100% API coverage (version 18.0).
@@ -62,7 +62,7 @@ A short rundown of some of the major features:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'portfoliomanager'
+gem 'portfoliomanager-rb'
 ```
 
 And then execute:
@@ -71,7 +71,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install portfoliomanager
+    $ gem install portfoliomanager-rb
 
 ## Usage
 
