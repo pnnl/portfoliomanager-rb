@@ -8,14 +8,15 @@ module PortfolioManager
   #
   # @see https://portfoliomanager.energystar.gov/webservices/home/api
   module Services
-    autoload :All,          "portfolio_manager/services/all"
-    autoload :BasicAccount, "portfolio_manager/services/basic_account"
-    autoload :Building,     "portfolio_manager/services/building"
-    autoload :Connection,   "portfolio_manager/services/connection"
-    autoload :Meter,        "portfolio_manager/services/meter"
-    autoload :Property,     "portfolio_manager/services/property"
-    autoload :PropertyUse,  "portfolio_manager/services/property_use"
-    autoload :Reporting,    "portfolio_manager/services/reporting"
-    autoload :TargetFinder, "portfolio_manager/services/target_finder"
+    autoload :All,                 "portfolio_manager/services/all"
+    autoload :BasicAccount,        "portfolio_manager/services/basic_account"
+    autoload :Building,            "portfolio_manager/services/building"
+    autoload :Connection,          "portfolio_manager/services/connection"
+    autoload :HomeEnergyYardstick, "portfolio_manager/services/home_energy_yardstick"
+    autoload :Meter,               "portfolio_manager/services/meter"
+    autoload :Property,            "portfolio_manager/services/property"
+    autoload :PropertyUse,         "portfolio_manager/services/property_use"
+    autoload :Reporting,           "portfolio_manager/services/reporting"
+    autoload :TargetFinder,        "portfolio_manager/services/target_finder"
   end
 end

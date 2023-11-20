@@ -2286,6 +2286,82 @@ module PortfolioManager
       end
     end
 
+    # {}ceilingHeightUnitsType
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    # @!attribute [rw] value
+    #   @return [SOAP::SOAPDecimal]
+    # @!attribute [rw] xmlattr_id
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] xmlattr_currentAsOf
+    #   @return [SOAP::SOAPDate]
+    # @!attribute [rw] xmlattr_temporary
+    #   @return [SOAP::SOAPBoolean]
+    # @!attribute [rw] xmlattr_default
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_units
+    #   @return [SOAP::SOAPString]
+    class CeilingHeightUnitsType < UseAttributeBase
+      AttrCurrentAsOf = XSD::QName.new(nil, "currentAsOf")
+      AttrDefault = XSD::QName.new(nil, "default")
+      AttrId = XSD::QName.new(nil, "id")
+      AttrTemporary = XSD::QName.new(nil, "temporary")
+      AttrUnits = XSD::QName.new(nil, "units")
+
+      attr_accessor :audit
+      attr_accessor :value
+
+      def __xmlattr
+        @__xmlattr ||= {}
+      end
+
+      def xmlattr_id
+        __xmlattr[AttrId]
+      end
+
+      def xmlattr_id=(value)
+        __xmlattr[AttrId] = value
+      end
+
+      def xmlattr_currentAsOf
+        __xmlattr[AttrCurrentAsOf]
+      end
+
+      def xmlattr_currentAsOf=(value)
+        __xmlattr[AttrCurrentAsOf] = value
+      end
+
+      def xmlattr_temporary
+        __xmlattr[AttrTemporary]
+      end
+
+      def xmlattr_temporary=(value)
+        __xmlattr[AttrTemporary] = value
+      end
+
+      def xmlattr_default
+        __xmlattr[AttrDefault]
+      end
+
+      def xmlattr_default=(value)
+        __xmlattr[AttrDefault] = value
+      end
+
+      def xmlattr_units
+        __xmlattr[AttrUnits]
+      end
+
+      def xmlattr_units=(value)
+        __xmlattr[AttrUnits] = value
+      end
+
+      def initialize(audit = nil, value = nil)
+        @audit = audit
+        @value = value
+        @__xmlattr = {}
+      end
+    end
+
     # {}clearHeightUnitsType
     # @!attribute [rw] audit
     #   @return [PortfolioManager::Xml::LogType]
@@ -2358,6 +2434,101 @@ module PortfolioManager
       def initialize(audit = nil, value = nil)
         @audit = audit
         @value = value
+        @__xmlattr = {}
+      end
+    end
+
+    # {}customUseDetailsType
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    # @!attribute [rw] value
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] customName
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] customUom
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_id
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] xmlattr_currentAsOf
+    #   @return [SOAP::SOAPDate]
+    # @!attribute [rw] xmlattr_temporary
+    #   @return [SOAP::SOAPBoolean]
+    # @!attribute [rw] xmlattr_default
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_units
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_dataType
+    #   @return [SOAP::SOAPString]
+    class CustomUseDetailsType < UseAttributeBase
+      AttrCurrentAsOf = XSD::QName.new(nil, "currentAsOf")
+      AttrDataType = XSD::QName.new(nil, "dataType")
+      AttrDefault = XSD::QName.new(nil, "default")
+      AttrId = XSD::QName.new(nil, "id")
+      AttrTemporary = XSD::QName.new(nil, "temporary")
+      AttrUnits = XSD::QName.new(nil, "units")
+
+      attr_accessor :audit
+      attr_accessor :value
+      attr_accessor :customName
+      attr_accessor :customUom
+
+      def __xmlattr
+        @__xmlattr ||= {}
+      end
+
+      def xmlattr_id
+        __xmlattr[AttrId]
+      end
+
+      def xmlattr_id=(value)
+        __xmlattr[AttrId] = value
+      end
+
+      def xmlattr_currentAsOf
+        __xmlattr[AttrCurrentAsOf]
+      end
+
+      def xmlattr_currentAsOf=(value)
+        __xmlattr[AttrCurrentAsOf] = value
+      end
+
+      def xmlattr_temporary
+        __xmlattr[AttrTemporary]
+      end
+
+      def xmlattr_temporary=(value)
+        __xmlattr[AttrTemporary] = value
+      end
+
+      def xmlattr_default
+        __xmlattr[AttrDefault]
+      end
+
+      def xmlattr_default=(value)
+        __xmlattr[AttrDefault] = value
+      end
+
+      def xmlattr_units
+        __xmlattr[AttrUnits]
+      end
+
+      def xmlattr_units=(value)
+        __xmlattr[AttrUnits] = value
+      end
+
+      def xmlattr_dataType
+        __xmlattr[AttrDataType]
+      end
+
+      def xmlattr_dataType=(value)
+        __xmlattr[AttrDataType] = value
+      end
+
+      def initialize(audit = nil, value = nil, customName = nil, customUom = nil)
+        @audit = audit
+        @value = value
+        @customName = customName
+        @customUom = customUom
         @__xmlattr = {}
       end
     end
@@ -2697,7 +2868,7 @@ module PortfolioManager
     # @!attribute [rw] accessLevel
     #   @return [PortfolioManager::Xml::ShareLevelType]
     # @!attribute [rw] aggregateMeter
-    #   @return [Object]
+    #   @return [SOAP::SOAPBoolean]
     # @!attribute [rw] audit
     #   @return [PortfolioManager::Xml::LogType]
     class MeterType
@@ -2970,10 +3141,13 @@ module PortfolioManager
     #   @return [SOAP::SOAPInteger]
     # @!attribute [rw] xmlattr_month
     #   @return [SOAP::SOAPInteger]
+    # @!attribute [rw] xmlattr_periodType
+    #   @return [SOAP::SOAPString]
     # @!attribute [rw] xmlattr_propertyId
     #   @return [SOAP::SOAPLong]
     class PropertyMetricsType
       AttrMonth = XSD::QName.new(nil, "month")
+      AttrPeriodType = XSD::QName.new(nil, "periodType")
       AttrPropertyId = XSD::QName.new(nil, "propertyId")
       AttrYear = XSD::QName.new(nil, "year")
 
@@ -2999,6 +3173,14 @@ module PortfolioManager
         __xmlattr[AttrMonth] = value
       end
 
+      def xmlattr_periodType
+        __xmlattr[AttrPeriodType]
+      end
+
+      def xmlattr_periodType=(value)
+        __xmlattr[AttrPeriodType] = value
+      end
+
       def xmlattr_propertyId
         __xmlattr[AttrPropertyId]
       end
@@ -3020,12 +3202,18 @@ module PortfolioManager
     #   @return [SOAP::SOAPString]
     # @!attribute [rw] xmlattr_name
     #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_id
+    #   @return [SOAP::SOAPLong]
     # @!attribute [rw] xmlattr_uom
     #   @return [SOAP::SOAPString]
     # @!attribute [rw] xmlattr_dataType
     #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_autoGenerated
+    #   @return [SOAP::SOAPBoolean]
     class Metric
+      AttrAutoGenerated = XSD::QName.new(nil, "autoGenerated")
       AttrDataType = XSD::QName.new(nil, "dataType")
+      AttrId = XSD::QName.new(nil, "id")
       AttrName = XSD::QName.new(nil, "name")
       AttrUom = XSD::QName.new(nil, "uom")
 
@@ -3044,6 +3232,14 @@ module PortfolioManager
         __xmlattr[AttrName] = value
       end
 
+      def xmlattr_id
+        __xmlattr[AttrId]
+      end
+
+      def xmlattr_id=(value)
+        __xmlattr[AttrId] = value
+      end
+
       def xmlattr_uom
         __xmlattr[AttrUom]
       end
@@ -3060,6 +3256,14 @@ module PortfolioManager
         __xmlattr[AttrDataType] = value
       end
 
+      def xmlattr_autoGenerated
+        __xmlattr[AttrAutoGenerated]
+      end
+
+      def xmlattr_autoGenerated=(value)
+        __xmlattr[AttrAutoGenerated] = value
+      end
+
       def initialize(monthlyMetric = [], value = nil)
         @monthlyMetric = monthlyMetric
         @value = value
@@ -3074,8 +3278,14 @@ module PortfolioManager
     #   @return [SOAP::SOAPString]
     # @!attribute [rw] xmlattr_year
     #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_periodType
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_autoGenerated
+    #   @return [SOAP::SOAPBoolean]
     class ReportMetricValuesWs
+      AttrAutoGenerated = XSD::QName.new(nil, "autoGenerated")
       AttrMonth = XSD::QName.new(nil, "month")
+      AttrPeriodType = XSD::QName.new(nil, "periodType")
       AttrYear = XSD::QName.new(nil, "year")
 
       attr_accessor :value
@@ -3098,6 +3308,22 @@ module PortfolioManager
 
       def xmlattr_year=(value)
         __xmlattr[AttrYear] = value
+      end
+
+      def xmlattr_periodType
+        __xmlattr[AttrPeriodType]
+      end
+
+      def xmlattr_periodType=(value)
+        __xmlattr[AttrPeriodType] = value
+      end
+
+      def xmlattr_autoGenerated
+        __xmlattr[AttrAutoGenerated]
+      end
+
+      def xmlattr_autoGenerated=(value)
+        __xmlattr[AttrAutoGenerated] = value
       end
 
       def initialize(value = [])
@@ -3278,7 +3504,7 @@ module PortfolioManager
       # @!attribute [rw] personalServices
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] mailingCenterPostOffice
-      #   @return [PortfolioManager::Xml::OtherType]
+      #   @return [PortfolioManager::Xml::MailingCenterPostOfficeType]
       # @!attribute [rw] library
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] otherSpecialityHospital
@@ -3299,8 +3525,8 @@ module PortfolioManager
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] zoo
       #   @return [PortfolioManager::Xml::OtherType]
-      # @!attribute [rw] automobileDealership
-      #   @return [PortfolioManager::Xml::OtherType]
+      # @!attribute [rw] vehicleDealership
+      #   @return [PortfolioManager::Xml::VehicleDealershipType]
       # @!attribute [rw] museum
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] otherRecreation
@@ -3369,6 +3595,8 @@ module PortfolioManager
       #   @return [PortfolioManager::Xml::ConvenienceStoreWithGasStationType]
       # @!attribute [rw] other
       #   @return [PortfolioManager::Xml::OtherType]
+      # @!attribute [rw] electricVehicleChargingStation
+      #   @return [PortfolioManager::Xml::EvChargingStationType]
       class PropertyUses
         attr_accessor :prison
         attr_accessor :refrigeratedWarehouse
@@ -3421,7 +3649,7 @@ module PortfolioManager
         attr_accessor :barNightclub
         attr_accessor :otherUtility
         attr_accessor :zoo
-        attr_accessor :automobileDealership
+        attr_accessor :vehicleDealership
         attr_accessor :museum
         attr_accessor :otherRecreation
         attr_accessor :otherRestaurantBar
@@ -3456,8 +3684,9 @@ module PortfolioManager
         attr_accessor :otherMall
         attr_accessor :convenienceStoreWithGasStation
         attr_accessor :other
+        attr_accessor :electricVehicleChargingStation
 
-        def initialize(prison = [], refrigeratedWarehouse = [], retail = [], hospital = [], medicalOffice = [], dataCenter = [], courthouse = [], singleFamilyHome = [], nonRefrigeratedWarehouse = [], multifamilyHousing = [], office = [], wholesaleClubSupercenter = [], selfStorageFacility = [], seniorLivingCommunity = [], residentialCareFacility = [], swimmingPool = [], residenceHallDormitory = [], wastewaterTreatmentPlant = [], distributionCenter = [], worshipFacility = [], financialOffice = [], drinkingWaterTreatmentAndDistribution = [], parking = [], supermarket = [], barracks = [], hotel = [], k12School = [], bankBranch = [], collegeUniversity = [], indoorArena = [], otherStadium = [], stadiumClosed = [], stadiumOpen = [], manufacturingIndustrialPlant = [], ambulatorySurgicalCenter = [], bowlingAlley = [], otherPublicServices = [], otherLodgingResidential = [], casino = [], personalServices = [], mailingCenterPostOffice = [], library = [], otherSpecialityHospital = [], conventionCenter = [], veterinaryOffice = [], urgentCareClinicOtherOutpatient = [], energyPowerStation = [], otherServices = [], barNightclub = [], otherUtility = [], zoo = [], automobileDealership = [], museum = [], otherRecreation = [], otherRestaurantBar = [], lifestyleCenter = [], policeStation = [], preschoolDaycare = [], raceTrack = [], fastFoodRestaurant = [], laboratory = [], convenienceStoreWithoutGasStation = [], repairServices = [], otherTechnologyScience = [], fireStation = [], foodSales = [], performingArts = [], outpatientRehabilitationPhysicalTherapy = [], stripMall = [], rollerRink = [], otherEducation = [], fitnessCenterHealthClubGym = [], aquarium = [], foodService = [], restaurant = [], enclosedMall = [], iceCurlingRink = [], adultEducation = [], otherEntertainmentPublicAssembly = [], movieTheater = [], transportationTerminalStation = [], vocationalSchool = [], socialMeetingHall = [], otherMall = [], convenienceStoreWithGasStation = [], other = [])
+        def initialize(prison = [], refrigeratedWarehouse = [], retail = [], hospital = [], medicalOffice = [], dataCenter = [], courthouse = [], singleFamilyHome = [], nonRefrigeratedWarehouse = [], multifamilyHousing = [], office = [], wholesaleClubSupercenter = [], selfStorageFacility = [], seniorLivingCommunity = [], residentialCareFacility = [], swimmingPool = [], residenceHallDormitory = [], wastewaterTreatmentPlant = [], distributionCenter = [], worshipFacility = [], financialOffice = [], drinkingWaterTreatmentAndDistribution = [], parking = [], supermarket = [], barracks = [], hotel = [], k12School = [], bankBranch = [], collegeUniversity = [], indoorArena = [], otherStadium = [], stadiumClosed = [], stadiumOpen = [], manufacturingIndustrialPlant = [], ambulatorySurgicalCenter = [], bowlingAlley = [], otherPublicServices = [], otherLodgingResidential = [], casino = [], personalServices = [], mailingCenterPostOffice = [], library = [], otherSpecialityHospital = [], conventionCenter = [], veterinaryOffice = [], urgentCareClinicOtherOutpatient = [], energyPowerStation = [], otherServices = [], barNightclub = [], otherUtility = [], zoo = [], vehicleDealership = [], museum = [], otherRecreation = [], otherRestaurantBar = [], lifestyleCenter = [], policeStation = [], preschoolDaycare = [], raceTrack = [], fastFoodRestaurant = [], laboratory = [], convenienceStoreWithoutGasStation = [], repairServices = [], otherTechnologyScience = [], fireStation = [], foodSales = [], performingArts = [], outpatientRehabilitationPhysicalTherapy = [], stripMall = [], rollerRink = [], otherEducation = [], fitnessCenterHealthClubGym = [], aquarium = [], foodService = [], restaurant = [], enclosedMall = [], iceCurlingRink = [], adultEducation = [], otherEntertainmentPublicAssembly = [], movieTheater = [], transportationTerminalStation = [], vocationalSchool = [], socialMeetingHall = [], otherMall = [], convenienceStoreWithGasStation = [], other = [], electricVehicleChargingStation = [])
           @prison = prison
           @refrigeratedWarehouse = refrigeratedWarehouse
           @retail = retail
@@ -3509,7 +3738,7 @@ module PortfolioManager
           @barNightclub = barNightclub
           @otherUtility = otherUtility
           @zoo = zoo
-          @automobileDealership = automobileDealership
+          @vehicleDealership = vehicleDealership
           @museum = museum
           @otherRecreation = otherRecreation
           @otherRestaurantBar = otherRestaurantBar
@@ -3544,6 +3773,7 @@ module PortfolioManager
           @otherMall = otherMall
           @convenienceStoreWithGasStation = convenienceStoreWithGasStation
           @other = other
+          @electricVehicleChargingStation = electricVehicleChargingStation
         end
       end
 
@@ -4685,6 +4915,8 @@ module PortfolioManager
       #   @return [PortfolioManager::Xml::UseDecimalType]
       # @!attribute [rw] seatingCapacity
       #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] ceilingHeight
+      #   @return [PortfolioManager::Xml::CeilingHeightUnitsType]
       # @!attribute [rw] cookingFacilities
       #   @return [PortfolioManager::Xml::UseYesNoType]
       # @!attribute [rw] grossFloorAreaUsedForFoodPreparation
@@ -4703,6 +4935,7 @@ module PortfolioManager
         attr_accessor :totalGrossFloorArea
         attr_accessor :weeklyOperatingHours
         attr_accessor :seatingCapacity
+        attr_accessor :ceilingHeight
         attr_accessor :cookingFacilities
         attr_accessor :grossFloorAreaUsedForFoodPreparation
         attr_accessor :numberOfWeekdaysOpen
@@ -4711,10 +4944,11 @@ module PortfolioManager
         attr_accessor :percentHeated
         attr_accessor :percentCooled
 
-        def initialize(totalGrossFloorArea = nil, weeklyOperatingHours = nil, seatingCapacity = nil, cookingFacilities = nil, grossFloorAreaUsedForFoodPreparation = nil, numberOfWeekdaysOpen = nil, numberOfComputers = nil, numberOfCommercialRefrigerationUnits = nil, percentHeated = nil, percentCooled = nil)
+        def initialize(totalGrossFloorArea = nil, weeklyOperatingHours = nil, seatingCapacity = nil, ceilingHeight = nil, cookingFacilities = nil, grossFloorAreaUsedForFoodPreparation = nil, numberOfWeekdaysOpen = nil, numberOfComputers = nil, numberOfCommercialRefrigerationUnits = nil, percentHeated = nil, percentCooled = nil)
           @totalGrossFloorArea = totalGrossFloorArea
           @weeklyOperatingHours = weeklyOperatingHours
           @seatingCapacity = seatingCapacity
+          @ceilingHeight = ceilingHeight
           @cookingFacilities = cookingFacilities
           @grossFloorAreaUsedForFoodPreparation = grossFloorAreaUsedForFoodPreparation
           @numberOfWeekdaysOpen = numberOfWeekdaysOpen
@@ -5051,6 +5285,12 @@ module PortfolioManager
       #   @return [PortfolioManager::Xml::OptionalFloorAreaType]
       # @!attribute [rw] lengthOfAllOpenClosedRefrigerationUnits
       #   @return [PortfolioManager::Xml::LengthOfAllOpenClosedRefrigerationUnitsType]
+      # @!attribute [rw] numberOfFTEWorkers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfCookingEquipmentUnits
+      #   @return [PortfolioManager::Xml::UseIntegerType]
+      # @!attribute [rw] numberOfWarmingHeatingEquipmentUnits
+      #   @return [PortfolioManager::Xml::UseIntegerType]
       class UseDetails
         attr_accessor :totalGrossFloorArea
         attr_accessor :weeklyOperatingHours
@@ -5064,8 +5304,11 @@ module PortfolioManager
         attr_accessor :percentHeated
         attr_accessor :areaOfAllWalkInRefrigerationUnits
         attr_accessor :lengthOfAllOpenClosedRefrigerationUnits
+        attr_accessor :numberOfFTEWorkers
+        attr_accessor :numberOfCookingEquipmentUnits
+        attr_accessor :numberOfWarmingHeatingEquipmentUnits
 
-        def initialize(totalGrossFloorArea = nil, weeklyOperatingHours = nil, numberOfWorkers = nil, numberOfComputers = nil, cookingFacilities = nil, numberOfWalkInRefrigerationUnits = nil, numberOfOpenClosedRefrigerationUnits = nil, numberOfCashRegisters = nil, percentCooled = nil, percentHeated = nil, areaOfAllWalkInRefrigerationUnits = nil, lengthOfAllOpenClosedRefrigerationUnits = nil)
+        def initialize(totalGrossFloorArea = nil, weeklyOperatingHours = nil, numberOfWorkers = nil, numberOfComputers = nil, cookingFacilities = nil, numberOfWalkInRefrigerationUnits = nil, numberOfOpenClosedRefrigerationUnits = nil, numberOfCashRegisters = nil, percentCooled = nil, percentHeated = nil, areaOfAllWalkInRefrigerationUnits = nil, lengthOfAllOpenClosedRefrigerationUnits = nil, numberOfFTEWorkers = nil, numberOfCookingEquipmentUnits = nil, numberOfWarmingHeatingEquipmentUnits = nil)
           @totalGrossFloorArea = totalGrossFloorArea
           @weeklyOperatingHours = weeklyOperatingHours
           @numberOfWorkers = numberOfWorkers
@@ -5078,6 +5321,9 @@ module PortfolioManager
           @percentHeated = percentHeated
           @areaOfAllWalkInRefrigerationUnits = areaOfAllWalkInRefrigerationUnits
           @lengthOfAllOpenClosedRefrigerationUnits = lengthOfAllOpenClosedRefrigerationUnits
+          @numberOfFTEWorkers = numberOfFTEWorkers
+          @numberOfCookingEquipmentUnits = numberOfCookingEquipmentUnits
+          @numberOfWarmingHeatingEquipmentUnits = numberOfWarmingHeatingEquipmentUnits
         end
       end
 
@@ -5127,6 +5373,12 @@ module PortfolioManager
       #   @return [PortfolioManager::Xml::OptionalFloorAreaType]
       # @!attribute [rw] lengthOfAllOpenClosedRefrigerationUnits
       #   @return [PortfolioManager::Xml::LengthOfAllOpenClosedRefrigerationUnitsType]
+      # @!attribute [rw] numberOfFTEWorkers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfCookingEquipmentUnits
+      #   @return [PortfolioManager::Xml::UseIntegerType]
+      # @!attribute [rw] numberOfWarmingHeatingEquipmentUnits
+      #   @return [PortfolioManager::Xml::UseIntegerType]
       class UseDetails
         attr_accessor :totalGrossFloorArea
         attr_accessor :weeklyOperatingHours
@@ -5140,8 +5392,11 @@ module PortfolioManager
         attr_accessor :percentHeated
         attr_accessor :areaOfAllWalkInRefrigerationUnits
         attr_accessor :lengthOfAllOpenClosedRefrigerationUnits
+        attr_accessor :numberOfFTEWorkers
+        attr_accessor :numberOfCookingEquipmentUnits
+        attr_accessor :numberOfWarmingHeatingEquipmentUnits
 
-        def initialize(totalGrossFloorArea = nil, weeklyOperatingHours = nil, numberOfWorkers = nil, numberOfComputers = nil, cookingFacilities = nil, numberOfWalkInRefrigerationUnits = nil, numberOfOpenClosedRefrigerationUnits = nil, numberOfCashRegisters = nil, percentCooled = nil, percentHeated = nil, areaOfAllWalkInRefrigerationUnits = nil, lengthOfAllOpenClosedRefrigerationUnits = nil)
+        def initialize(totalGrossFloorArea = nil, weeklyOperatingHours = nil, numberOfWorkers = nil, numberOfComputers = nil, cookingFacilities = nil, numberOfWalkInRefrigerationUnits = nil, numberOfOpenClosedRefrigerationUnits = nil, numberOfCashRegisters = nil, percentCooled = nil, percentHeated = nil, areaOfAllWalkInRefrigerationUnits = nil, lengthOfAllOpenClosedRefrigerationUnits = nil, numberOfFTEWorkers = nil, numberOfCookingEquipmentUnits = nil, numberOfWarmingHeatingEquipmentUnits = nil)
           @totalGrossFloorArea = totalGrossFloorArea
           @weeklyOperatingHours = weeklyOperatingHours
           @numberOfWorkers = numberOfWorkers
@@ -5154,6 +5409,9 @@ module PortfolioManager
           @percentHeated = percentHeated
           @areaOfAllWalkInRefrigerationUnits = areaOfAllWalkInRefrigerationUnits
           @lengthOfAllOpenClosedRefrigerationUnits = lengthOfAllOpenClosedRefrigerationUnits
+          @numberOfFTEWorkers = numberOfFTEWorkers
+          @numberOfCookingEquipmentUnits = numberOfCookingEquipmentUnits
+          @numberOfWarmingHeatingEquipmentUnits = numberOfWarmingHeatingEquipmentUnits
         end
       end
 
@@ -5952,6 +6210,198 @@ module PortfolioManager
       end
     end
 
+    # {}evChargingStationType
+    # @!attribute [rw] name
+    #   @return [Object]
+    # @!attribute [rw] useDetails
+    #   @return [PortfolioManager::Xml::EvChargingStationType::UseDetails]
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    class EvChargingStationType
+
+      # inner class for member: useDetails
+      # {}useDetails
+      # @!attribute [rw] numberOfLevelOneEvChargingStations
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfLevelTwoEvChargingStations
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfDcFastEvChargingStations
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      class UseDetails
+        attr_accessor :numberOfLevelOneEvChargingStations
+        attr_accessor :numberOfLevelTwoEvChargingStations
+        attr_accessor :numberOfDcFastEvChargingStations
+
+        def initialize(numberOfLevelOneEvChargingStations = nil, numberOfLevelTwoEvChargingStations = nil, numberOfDcFastEvChargingStations = nil)
+          @numberOfLevelOneEvChargingStations = numberOfLevelOneEvChargingStations
+          @numberOfLevelTwoEvChargingStations = numberOfLevelTwoEvChargingStations
+          @numberOfDcFastEvChargingStations = numberOfDcFastEvChargingStations
+        end
+      end
+
+      attr_accessor :name
+      attr_accessor :useDetails
+      attr_accessor :audit
+
+      def initialize(name = nil, useDetails = nil, audit = nil)
+        @name = name
+        @useDetails = useDetails
+        @audit = audit
+      end
+    end
+
+    # {}vehicleDealershipType
+    # @!attribute [rw] name
+    #   @return [Object]
+    # @!attribute [rw] useDetails
+    #   @return [PortfolioManager::Xml::VehicleDealershipType::UseDetails]
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    class VehicleDealershipType
+
+      # inner class for member: useDetails
+      # {}useDetails
+      # @!attribute [rw] totalGrossFloorArea
+      #   @return [PortfolioManager::Xml::GrossFloorAreaType]
+      # @!attribute [rw] numberOfWorkers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] averageNumberOfVehiclesInInventory
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] percentHeated
+      #   @return [PortfolioManager::Xml::PercentHeatedType]
+      # @!attribute [rw] percentCooled
+      #   @return [PortfolioManager::Xml::PercentCooledType]
+      # @!attribute [rw] weeklyOperatingHours
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfComputers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      class UseDetails
+        attr_accessor :totalGrossFloorArea
+        attr_accessor :numberOfWorkers
+        attr_accessor :averageNumberOfVehiclesInInventory
+        attr_accessor :percentHeated
+        attr_accessor :percentCooled
+        attr_accessor :weeklyOperatingHours
+        attr_accessor :numberOfComputers
+
+        def initialize(totalGrossFloorArea = nil, numberOfWorkers = nil, averageNumberOfVehiclesInInventory = nil, percentHeated = nil, percentCooled = nil, weeklyOperatingHours = nil, numberOfComputers = nil)
+          @totalGrossFloorArea = totalGrossFloorArea
+          @numberOfWorkers = numberOfWorkers
+          @averageNumberOfVehiclesInInventory = averageNumberOfVehiclesInInventory
+          @percentHeated = percentHeated
+          @percentCooled = percentCooled
+          @weeklyOperatingHours = weeklyOperatingHours
+          @numberOfComputers = numberOfComputers
+        end
+      end
+
+      attr_accessor :name
+      attr_accessor :useDetails
+      attr_accessor :audit
+
+      def initialize(name = nil, useDetails = nil, audit = nil)
+        @name = name
+        @useDetails = useDetails
+        @audit = audit
+      end
+    end
+
+    # {}mailingCenterPostOfficeType
+    # @!attribute [rw] name
+    #   @return [Object]
+    # @!attribute [rw] useDetails
+    #   @return [PortfolioManager::Xml::MailingCenterPostOfficeType::UseDetails]
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    class MailingCenterPostOfficeType
+
+      # inner class for member: useDetails
+      # {}useDetails
+      # @!attribute [rw] totalGrossFloorArea
+      #   @return [PortfolioManager::Xml::GrossFloorAreaType]
+      # @!attribute [rw] weeklyOperatingHours
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfWorkers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfComputers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfLettersPackagesPerYear
+      #   @return [PortfolioManager::Xml::UseIntegerType]
+      # @!attribute [rw] deliveryFacility
+      #   @return [PortfolioManager::Xml::UseYesNoType]
+      # @!attribute [rw] percentCooled
+      #   @return [PortfolioManager::Xml::PercentCooledType]
+      # @!attribute [rw] percentHeated
+      #   @return [PortfolioManager::Xml::PercentHeatedType]
+      class UseDetails
+        attr_accessor :totalGrossFloorArea
+        attr_accessor :weeklyOperatingHours
+        attr_accessor :numberOfWorkers
+        attr_accessor :numberOfComputers
+        attr_accessor :numberOfLettersPackagesPerYear
+        attr_accessor :deliveryFacility
+        attr_accessor :percentCooled
+        attr_accessor :percentHeated
+
+        def initialize(totalGrossFloorArea = nil, weeklyOperatingHours = nil, numberOfWorkers = nil, numberOfComputers = nil, numberOfLettersPackagesPerYear = nil, deliveryFacility = nil, percentCooled = nil, percentHeated = nil)
+          @totalGrossFloorArea = totalGrossFloorArea
+          @weeklyOperatingHours = weeklyOperatingHours
+          @numberOfWorkers = numberOfWorkers
+          @numberOfComputers = numberOfComputers
+          @numberOfLettersPackagesPerYear = numberOfLettersPackagesPerYear
+          @deliveryFacility = deliveryFacility
+          @percentCooled = percentCooled
+          @percentHeated = percentHeated
+        end
+      end
+
+      attr_accessor :name
+      attr_accessor :useDetails
+      attr_accessor :audit
+
+      def initialize(name = nil, useDetails = nil, audit = nil)
+        @name = name
+        @useDetails = useDetails
+        @audit = audit
+      end
+    end
+
+    # {}customUseType
+    # @!attribute [rw] name
+    #   @return [Object]
+    # @!attribute [rw] useDetails
+    #   @return [PortfolioManager::Xml::CustomUseType::UseDetails]
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    class CustomUseType
+
+      # inner class for member: useDetails
+      # {}useDetails
+      # @!attribute [rw] customUseDetail1
+      #   @return [PortfolioManager::Xml::CustomUseDetailsType]
+      # @!attribute [rw] customUseDetail2
+      #   @return [PortfolioManager::Xml::CustomUseDetailsType]
+      class UseDetails
+        attr_accessor :customUseDetail1
+        attr_accessor :customUseDetail2
+
+        def initialize(customUseDetail1 = nil, customUseDetail2 = nil)
+          @customUseDetail1 = customUseDetail1
+          @customUseDetail2 = customUseDetail2
+        end
+      end
+
+      attr_accessor :name
+      attr_accessor :useDetails
+      attr_accessor :audit
+
+      def initialize(name = nil, useDetails = nil, audit = nil)
+        @name = name
+        @useDetails = useDetails
+        @audit = audit
+      end
+    end
+
     # {}propertyDesignType
     # @!attribute [rw] name
     #   @return [SOAP::SOAPString]
@@ -6081,7 +6531,7 @@ module PortfolioManager
       # @!attribute [rw] personalServices
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] mailingCenterPostOffice
-      #   @return [PortfolioManager::Xml::OtherType]
+      #   @return [PortfolioManager::Xml::MailingCenterPostOfficeType]
       # @!attribute [rw] library
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] otherSpecialityHospital
@@ -6102,8 +6552,8 @@ module PortfolioManager
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] zoo
       #   @return [PortfolioManager::Xml::OtherType]
-      # @!attribute [rw] automobileDealership
-      #   @return [PortfolioManager::Xml::OtherType]
+      # @!attribute [rw] vehicleDealership
+      #   @return [PortfolioManager::Xml::VehicleDealershipType]
       # @!attribute [rw] museum
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] otherRecreation
@@ -6172,6 +6622,8 @@ module PortfolioManager
       #   @return [PortfolioManager::Xml::ConvenienceStoreWithGasStationType]
       # @!attribute [rw] other
       #   @return [PortfolioManager::Xml::OtherType]
+      # @!attribute [rw] electricVehicleChargingStation
+      #   @return [PortfolioManager::Xml::EvChargingStationType]
       class PropertyUses
         attr_accessor :prison
         attr_accessor :refrigeratedWarehouse
@@ -6224,7 +6676,7 @@ module PortfolioManager
         attr_accessor :barNightclub
         attr_accessor :otherUtility
         attr_accessor :zoo
-        attr_accessor :automobileDealership
+        attr_accessor :vehicleDealership
         attr_accessor :museum
         attr_accessor :otherRecreation
         attr_accessor :otherRestaurantBar
@@ -6259,8 +6711,9 @@ module PortfolioManager
         attr_accessor :otherMall
         attr_accessor :convenienceStoreWithGasStation
         attr_accessor :other
+        attr_accessor :electricVehicleChargingStation
 
-        def initialize(prison = [], refrigeratedWarehouse = [], retail = [], hospital = [], medicalOffice = [], dataCenter = [], courthouse = [], singleFamilyHome = [], nonRefrigeratedWarehouse = [], multifamilyHousing = [], office = [], wholesaleClubSupercenter = [], selfStorageFacility = [], seniorLivingCommunity = [], residentialCareFacility = [], swimmingPool = [], residenceHallDormitory = [], wastewaterTreatmentPlant = [], distributionCenter = [], worshipFacility = [], financialOffice = [], drinkingWaterTreatmentAndDistribution = [], parking = [], supermarket = [], barracks = [], hotel = [], k12School = [], bankBranch = [], collegeUniversity = [], indoorArena = [], otherStadium = [], stadiumClosed = [], stadiumOpen = [], manufacturingIndustrialPlant = [], ambulatorySurgicalCenter = [], bowlingAlley = [], otherPublicServices = [], otherLodgingResidential = [], casino = [], personalServices = [], mailingCenterPostOffice = [], library = [], otherSpecialityHospital = [], conventionCenter = [], veterinaryOffice = [], urgentCareClinicOtherOutpatient = [], energyPowerStation = [], otherServices = [], barNightclub = [], otherUtility = [], zoo = [], automobileDealership = [], museum = [], otherRecreation = [], otherRestaurantBar = [], lifestyleCenter = [], policeStation = [], preschoolDaycare = [], raceTrack = [], fastFoodRestaurant = [], laboratory = [], convenienceStoreWithoutGasStation = [], repairServices = [], otherTechnologyScience = [], fireStation = [], foodSales = [], performingArts = [], outpatientRehabilitationPhysicalTherapy = [], stripMall = [], rollerRink = [], otherEducation = [], fitnessCenterHealthClubGym = [], aquarium = [], foodService = [], restaurant = [], enclosedMall = [], iceCurlingRink = [], adultEducation = [], otherEntertainmentPublicAssembly = [], movieTheater = [], transportationTerminalStation = [], vocationalSchool = [], socialMeetingHall = [], otherMall = [], convenienceStoreWithGasStation = [], other = [])
+        def initialize(prison = [], refrigeratedWarehouse = [], retail = [], hospital = [], medicalOffice = [], dataCenter = [], courthouse = [], singleFamilyHome = [], nonRefrigeratedWarehouse = [], multifamilyHousing = [], office = [], wholesaleClubSupercenter = [], selfStorageFacility = [], seniorLivingCommunity = [], residentialCareFacility = [], swimmingPool = [], residenceHallDormitory = [], wastewaterTreatmentPlant = [], distributionCenter = [], worshipFacility = [], financialOffice = [], drinkingWaterTreatmentAndDistribution = [], parking = [], supermarket = [], barracks = [], hotel = [], k12School = [], bankBranch = [], collegeUniversity = [], indoorArena = [], otherStadium = [], stadiumClosed = [], stadiumOpen = [], manufacturingIndustrialPlant = [], ambulatorySurgicalCenter = [], bowlingAlley = [], otherPublicServices = [], otherLodgingResidential = [], casino = [], personalServices = [], mailingCenterPostOffice = [], library = [], otherSpecialityHospital = [], conventionCenter = [], veterinaryOffice = [], urgentCareClinicOtherOutpatient = [], energyPowerStation = [], otherServices = [], barNightclub = [], otherUtility = [], zoo = [], vehicleDealership = [], museum = [], otherRecreation = [], otherRestaurantBar = [], lifestyleCenter = [], policeStation = [], preschoolDaycare = [], raceTrack = [], fastFoodRestaurant = [], laboratory = [], convenienceStoreWithoutGasStation = [], repairServices = [], otherTechnologyScience = [], fireStation = [], foodSales = [], performingArts = [], outpatientRehabilitationPhysicalTherapy = [], stripMall = [], rollerRink = [], otherEducation = [], fitnessCenterHealthClubGym = [], aquarium = [], foodService = [], restaurant = [], enclosedMall = [], iceCurlingRink = [], adultEducation = [], otherEntertainmentPublicAssembly = [], movieTheater = [], transportationTerminalStation = [], vocationalSchool = [], socialMeetingHall = [], otherMall = [], convenienceStoreWithGasStation = [], other = [], electricVehicleChargingStation = [])
           @prison = prison
           @refrigeratedWarehouse = refrigeratedWarehouse
           @retail = retail
@@ -6312,7 +6765,7 @@ module PortfolioManager
           @barNightclub = barNightclub
           @otherUtility = otherUtility
           @zoo = zoo
-          @automobileDealership = automobileDealership
+          @vehicleDealership = vehicleDealership
           @museum = museum
           @otherRecreation = otherRecreation
           @otherRestaurantBar = otherRestaurantBar
@@ -6347,6 +6800,7 @@ module PortfolioManager
           @otherMall = otherMall
           @convenienceStoreWithGasStation = convenienceStoreWithGasStation
           @other = other
+          @electricVehicleChargingStation = electricVehicleChargingStation
         end
       end
 
@@ -7003,6 +7457,619 @@ module PortfolioManager
       end
     end
 
+    # {}heyType
+    # @!attribute [rw] propertyInfo
+    #   @return [PortfolioManager::Xml::HeyType::PropertyInfo]
+    # @!attribute [rw] meter
+    #   @return [PortfolioManager::Xml::HeyType::Meter]
+    class HeyType
+
+      # inner class for member: propertyInfo
+      # {}propertyInfo
+      # @!attribute [rw] postalCode
+      #   @return [SOAP::SOAPString]
+      # @!attribute [rw] numberOfOccupants
+      #   @return [SOAP::SOAPInt]
+      # @!attribute [rw] grossFloorArea
+      #   @return [PortfolioManager::Xml::GrossFloorAreaType]
+      class PropertyInfo
+        attr_accessor :postalCode
+        attr_accessor :numberOfOccupants
+        attr_accessor :grossFloorArea
+
+        def initialize(postalCode = nil, numberOfOccupants = nil, grossFloorArea = nil)
+          @postalCode = postalCode
+          @numberOfOccupants = numberOfOccupants
+          @grossFloorArea = grossFloorArea
+        end
+      end
+
+      # inner class for member: meter
+      # {}meter
+      # @!attribute [rw] type
+      #   @return [PortfolioManager::Xml::AllEnergyMetersType]
+      # @!attribute [rw] unitOfMeasure
+      #   @return [PortfolioManager::Xml::DesignUnitOfMeasure]
+      # @!attribute [rw] meterData
+      #   @return [PortfolioManager::Xml::HeyType::Meter::MeterData]
+      class Meter
+
+        # inner class for member: meterData
+        # {}meterData
+        class MeterData < ::Array
+        end
+
+        attr_accessor :type
+        attr_accessor :unitOfMeasure
+        attr_accessor :meterData
+
+        def initialize(type = nil, unitOfMeasure = nil, meterData = nil)
+          @type = type
+          @unitOfMeasure = unitOfMeasure
+          @meterData = meterData
+        end
+      end
+
+      attr_accessor :propertyInfo
+      attr_accessor :meter
+
+      def initialize(propertyInfo = nil, meter = [])
+        @propertyInfo = propertyInfo
+        @meter = meter
+      end
+    end
+
+    # {}reportMetrics
+    class ReportMetrics < ::Array
+
+      # {}group
+      # @!attribute [rw] metrics
+      #   @return [PortfolioManager::Xml::ReportMetrics::Group::Metrics]
+      # @!attribute [rw] xmlattr_id
+      #   @return [SOAP::SOAPLong]
+      # @!attribute [rw] xmlattr_name
+      #   @return [SOAP::SOAPString]
+      class Group
+        AttrId = XSD::QName.new(nil, "id")
+        AttrName = XSD::QName.new(nil, "name")
+
+        # inner class for member: metrics
+        # {}metrics
+        class Metrics < ::Array
+
+          # {}metric
+          # @!attribute [rw] xmlattr_id
+          #   @return [SOAP::SOAPLong]
+          # @!attribute [rw] xmlattr_name
+          #   @return [SOAP::SOAPString]
+          # @!attribute [rw] xmlattr_description
+          #   @return [SOAP::SOAPString]
+          # @!attribute [rw] xmlattr_dataType
+          #   @return [SOAP::SOAPString]
+          # @!attribute [rw] xmlattr_uom
+          #   @return [SOAP::SOAPString]
+          class Metric
+            AttrDataType = XSD::QName.new(nil, "dataType")
+            AttrDescription = XSD::QName.new(nil, "description")
+            AttrId = XSD::QName.new(nil, "id")
+            AttrName = XSD::QName.new(nil, "name")
+            AttrUom = XSD::QName.new(nil, "uom")
+
+            def __xmlattr
+              @__xmlattr ||= {}
+            end
+
+            def xmlattr_id
+              __xmlattr[AttrId]
+            end
+
+            def xmlattr_id=(value)
+              __xmlattr[AttrId] = value
+            end
+
+            def xmlattr_name
+              __xmlattr[AttrName]
+            end
+
+            def xmlattr_name=(value)
+              __xmlattr[AttrName] = value
+            end
+
+            def xmlattr_description
+              __xmlattr[AttrDescription]
+            end
+
+            def xmlattr_description=(value)
+              __xmlattr[AttrDescription] = value
+            end
+
+            def xmlattr_dataType
+              __xmlattr[AttrDataType]
+            end
+
+            def xmlattr_dataType=(value)
+              __xmlattr[AttrDataType] = value
+            end
+
+            def xmlattr_uom
+              __xmlattr[AttrUom]
+            end
+
+            def xmlattr_uom=(value)
+              __xmlattr[AttrUom] = value
+            end
+
+            def initialize
+              @__xmlattr = {}
+            end
+          end
+        end
+
+        attr_accessor :metrics
+
+        def __xmlattr
+          @__xmlattr ||= {}
+        end
+
+        def xmlattr_id
+          __xmlattr[AttrId]
+        end
+
+        def xmlattr_id=(value)
+          __xmlattr[AttrId] = value
+        end
+
+        def xmlattr_name
+          __xmlattr[AttrName]
+        end
+
+        def xmlattr_name=(value)
+          __xmlattr[AttrName] = value
+        end
+
+        def initialize(metrics = nil)
+          @metrics = metrics
+          @__xmlattr = {}
+        end
+      end
+    end
+
+    # {}reportTemplateType
+    # @!attribute [rw] id
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] name
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] templateType
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] metrics
+    #   @return [PortfolioManager::Xml::ReportTemplateType::Metrics]
+    # @!attribute [rw] reportId
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    class ReportTemplateType
+
+      # inner class for member: metrics
+      # {}metrics
+      class Metrics < ::Array
+      end
+
+      attr_accessor :id
+      attr_accessor :name
+      attr_accessor :templateType
+      attr_accessor :metrics
+      attr_accessor :reportId
+      attr_accessor :audit
+
+      def initialize(id = nil, name = nil, templateType = nil, metrics = nil, reportId = nil, audit = nil)
+        @id = id
+        @name = name
+        @templateType = templateType
+        @metrics = metrics
+        @reportId = reportId
+        @audit = audit
+      end
+    end
+
+    # {}report
+    # @!attribute [rw] id
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] type
+    #   @return [PortfolioManager::Xml::ReportType]
+    # @!attribute [rw] timeframe
+    #   @return [PortfolioManager::Xml::TimeframeType]
+    # @!attribute [rw] templateId
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] templateName
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] properties
+    #   @return [PortfolioManager::Xml::Report::Properties]
+    # @!attribute [rw] reportGenerationStatus
+    #   @return [PortfolioManager::Xml::ReportStatusType]
+    class Report
+
+      # inner class for member: properties
+      # {}properties
+      class Properties < ::Array
+      end
+
+      attr_accessor :id
+      attr_accessor :type
+      attr_accessor :timeframe
+      attr_accessor :templateId
+      attr_accessor :templateName
+      attr_accessor :properties
+      attr_accessor :reportGenerationStatus
+
+      def initialize(id = nil, type = nil, timeframe = nil, templateId = nil, templateName = nil, properties = nil, reportGenerationStatus = nil)
+        @id = id
+        @type = type
+        @timeframe = timeframe
+        @templateId = templateId
+        @templateName = templateName
+        @properties = properties
+        @reportGenerationStatus = reportGenerationStatus
+      end
+    end
+
+    # {}timeframeType
+    # @!attribute [rw] currentPeriod
+    #   @return [PortfolioManager::Xml::TimeframeType::CurrentPeriod]
+    # @!attribute [rw] baselinePeriod
+    #   @return [PortfolioManager::Xml::TimeframeType::BaselinePeriod]
+    # @!attribute [rw] currentVsBaseline
+    #   @return [PortfolioManager::Xml::TimeframeType::CurrentVsBaseline]
+    # @!attribute [rw] singlePeriod
+    #   @return [PortfolioManager::Xml::TimeframeType::SinglePeriod]
+    # @!attribute [rw] compareCurrentPeriod
+    #   @return [PortfolioManager::Xml::TimeframeType::CompareCurrentPeriod]
+    # @!attribute [rw] compareBaselinePeriod
+    #   @return [PortfolioManager::Xml::TimeframeType::CompareBaselinePeriod]
+    # @!attribute [rw] twoPeriods
+    #   @return [PortfolioManager::Xml::TimeframeType::TwoPeriods]
+    # @!attribute [rw] dateRange
+    #   @return [PortfolioManager::Xml::TimeframeType::DateRange]
+    class TimeframeType
+
+      # inner class for member: currentPeriod
+      # {}currentPeriod
+      # @!attribute [rw] meterType
+      #   @return [PortfolioManager::Xml::MeterCategoryType]
+      class CurrentPeriod
+        attr_accessor :meterType
+
+        def initialize(meterType = nil)
+          @meterType = meterType
+        end
+      end
+
+      # inner class for member: baselinePeriod
+      # {}baselinePeriod
+      # @!attribute [rw] meterType
+      #   @return [PortfolioManager::Xml::MeterCategoryType]
+      class BaselinePeriod
+        attr_accessor :meterType
+
+        def initialize(meterType = nil)
+          @meterType = meterType
+        end
+      end
+
+      # inner class for member: currentVsBaseline
+      # {}currentVsBaseline
+      # @!attribute [rw] meterType
+      #   @return [PortfolioManager::Xml::MeterCategoryType]
+      class CurrentVsBaseline
+        attr_accessor :meterType
+
+        def initialize(meterType = nil)
+          @meterType = meterType
+        end
+      end
+
+      # inner class for member: singlePeriod
+      # {}singlePeriod
+      # @!attribute [rw] periodEndingDate
+      #   @return [PortfolioManager::Xml::Ped]
+      class SinglePeriod
+        attr_accessor :periodEndingDate
+
+        def initialize(periodEndingDate = nil)
+          @periodEndingDate = periodEndingDate
+        end
+      end
+
+      # inner class for member: compareCurrentPeriod
+      # {}compareCurrentPeriod
+      # @!attribute [rw] meterType
+      #   @return [PortfolioManager::Xml::MeterCategoryType]
+      # @!attribute [rw] periodEndingDate
+      #   @return [PortfolioManager::Xml::Ped]
+      class CompareCurrentPeriod
+        attr_accessor :meterType
+        attr_accessor :periodEndingDate
+
+        def initialize(meterType = nil, periodEndingDate = nil)
+          @meterType = meterType
+          @periodEndingDate = periodEndingDate
+        end
+      end
+
+      # inner class for member: compareBaselinePeriod
+      # {}compareBaselinePeriod
+      # @!attribute [rw] meterType
+      #   @return [PortfolioManager::Xml::MeterCategoryType]
+      # @!attribute [rw] periodEndingDate
+      #   @return [PortfolioManager::Xml::Ped]
+      class CompareBaselinePeriod
+        attr_accessor :meterType
+        attr_accessor :periodEndingDate
+
+        def initialize(meterType = nil, periodEndingDate = nil)
+          @meterType = meterType
+          @periodEndingDate = periodEndingDate
+        end
+      end
+
+      # inner class for member: twoPeriods
+      # {}twoPeriods
+      # @!attribute [rw] periodEndingDateOne
+      #   @return [PortfolioManager::Xml::Ped]
+      # @!attribute [rw] periodEndingDateTwo
+      #   @return [PortfolioManager::Xml::Ped]
+      class TwoPeriods
+        attr_accessor :periodEndingDateOne
+        attr_accessor :periodEndingDateTwo
+
+        def initialize(periodEndingDateOne = nil, periodEndingDateTwo = nil)
+          @periodEndingDateOne = periodEndingDateOne
+          @periodEndingDateTwo = periodEndingDateTwo
+        end
+      end
+
+      # inner class for member: dateRange
+      # {}dateRange
+      # @!attribute [rw] fromPeriodEndingDate
+      #   @return [PortfolioManager::Xml::Ped]
+      # @!attribute [rw] toPeriodEndingDate
+      #   @return [PortfolioManager::Xml::Ped]
+      # @!attribute [rw] interval
+      #   @return [PortfolioManager::Xml::ReportingIntervalType]
+      class DateRange
+        attr_accessor :fromPeriodEndingDate
+        attr_accessor :toPeriodEndingDate
+        attr_accessor :interval
+
+        def initialize(fromPeriodEndingDate = nil, toPeriodEndingDate = nil, interval = nil)
+          @fromPeriodEndingDate = fromPeriodEndingDate
+          @toPeriodEndingDate = toPeriodEndingDate
+          @interval = interval
+        end
+      end
+
+      attr_accessor :currentPeriod
+      attr_accessor :baselinePeriod
+      attr_accessor :currentVsBaseline
+      attr_accessor :singlePeriod
+      attr_accessor :compareCurrentPeriod
+      attr_accessor :compareBaselinePeriod
+      attr_accessor :twoPeriods
+      attr_accessor :dateRange
+
+      def initialize(currentPeriod = nil, baselinePeriod = nil, currentVsBaseline = nil, singlePeriod = nil, compareCurrentPeriod = nil, compareBaselinePeriod = nil, twoPeriods = nil, dateRange = nil)
+        @currentPeriod = currentPeriod
+        @baselinePeriod = baselinePeriod
+        @currentVsBaseline = currentVsBaseline
+        @singlePeriod = singlePeriod
+        @compareCurrentPeriod = compareCurrentPeriod
+        @compareBaselinePeriod = compareBaselinePeriod
+        @twoPeriods = twoPeriods
+        @dateRange = dateRange
+      end
+    end
+
+    # {}ped
+    # @!attribute [rw] month
+    #   @return [SOAP::SOAPNonNegativeInteger]
+    # @!attribute [rw] year
+    #   @return [SOAP::SOAPNonNegativeInteger]
+    class Ped
+      attr_accessor :month
+      attr_accessor :year
+
+      def initialize(month = nil, year = nil)
+        @month = month
+        @year = year
+      end
+    end
+
+    # {}reportStatusDef
+    # @!attribute [rw] status
+    #   @return [PortfolioManager::Xml::ReportStatusType]
+    # @!attribute [rw] description
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] generationStartDate
+    #   @return [SOAP::SOAPDateTime]
+    # @!attribute [rw] generationEndDate
+    #   @return [SOAP::SOAPDateTime]
+    # @!attribute [rw] submittedDate
+    #   @return [SOAP::SOAPDateTime]
+    class ReportStatusDef
+      attr_accessor :status
+      attr_accessor :description
+      attr_accessor :generationStartDate
+      attr_accessor :generationEndDate
+      attr_accessor :submittedDate
+
+      def initialize(status = nil, description = nil, generationStartDate = nil, generationEndDate = nil, submittedDate = nil)
+        @status = status
+        @description = description
+        @generationStartDate = generationStartDate
+        @generationEndDate = generationEndDate
+        @submittedDate = submittedDate
+      end
+    end
+
+    # {}dataResponse
+    # @!attribute [rw] dataRequestId
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] timeframe
+    #   @return [PortfolioManager::Xml::TimeframeType]
+    # @!attribute [rw] properties
+    #   @return [PortfolioManager::Xml::DataResponse::Properties]
+    # @!attribute [rw] xmlattr_id
+    #   @return [SOAP::SOAPLong]
+    class DataResponse
+      AttrId = XSD::QName.new(nil, "id")
+
+      # inner class for member: properties
+      # {}properties
+      class Properties < ::Array
+      end
+
+      attr_accessor :dataRequestId
+      attr_accessor :timeframe
+      attr_accessor :properties
+
+      def __xmlattr
+        @__xmlattr ||= {}
+      end
+
+      def xmlattr_id
+        __xmlattr[AttrId]
+      end
+
+      def xmlattr_id=(value)
+        __xmlattr[AttrId] = value
+      end
+
+      def initialize(dataRequestId = nil, timeframe = nil, properties = nil)
+        @dataRequestId = dataRequestId
+        @timeframe = timeframe
+        @properties = properties
+        @__xmlattr = {}
+      end
+    end
+
+    # {}dataRequest
+    # @!attribute [rw] name
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] requesterDetails
+    #   @return [PortfolioManager::Xml::DataRequest::RequesterDetails]
+    # @!attribute [rw] instructions
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] timeframe
+    #   @return [PortfolioManager::Xml::TimeframeType]
+    # @!attribute [rw] locations
+    #   @return [PortfolioManager::Xml::DataRequest::Locations]
+    # @!attribute [rw] dataRequestStatus
+    #   @return [PortfolioManager::Xml::DataRequestStatusType]
+    # @!attribute [rw] dataRequestAcceptedBy
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] dataRequestAcceptedDate
+    #   @return [SOAP::SOAPDateTime]
+    # @!attribute [rw] xmlattr_id
+    #   @return [SOAP::SOAPLong]
+    class DataRequest
+      AttrId = XSD::QName.new(nil, "id")
+
+      # inner class for member: requesterDetails
+      # {}requesterDetails
+      # @!attribute [rw] firstName
+      #   @return [SOAP::SOAPString]
+      # @!attribute [rw] lastName
+      #   @return [SOAP::SOAPString]
+      # @!attribute [rw] email
+      #   @return [SOAP::SOAPString]
+      # @!attribute [rw] phone
+      #   @return [SOAP::SOAPString]
+      class RequesterDetails
+        attr_accessor :firstName
+        attr_accessor :lastName
+        attr_accessor :email
+        attr_accessor :phone
+
+        def initialize(firstName = nil, lastName = nil, email = nil, phone = nil)
+          @firstName = firstName
+          @lastName = lastName
+          @email = email
+          @phone = phone
+        end
+      end
+
+      # inner class for member: locations
+      # {}locations
+      class Locations < ::Array
+
+        # {}location
+        # @!attribute [rw] xmlattr_country
+        #   @return [SOAP::SOAPString]
+        # @!attribute [rw] xmlattr_state
+        #   @return [SOAP::SOAPString]
+        class Location
+          AttrCountry = XSD::QName.new(nil, "country")
+          AttrState = XSD::QName.new(nil, "state")
+
+          def __xmlattr
+            @__xmlattr ||= {}
+          end
+
+          def xmlattr_country
+            __xmlattr[AttrCountry]
+          end
+
+          def xmlattr_country=(value)
+            __xmlattr[AttrCountry] = value
+          end
+
+          def xmlattr_state
+            __xmlattr[AttrState]
+          end
+
+          def xmlattr_state=(value)
+            __xmlattr[AttrState] = value
+          end
+
+          def initialize
+            @__xmlattr = {}
+          end
+        end
+      end
+
+      attr_accessor :name
+      attr_accessor :requesterDetails
+      attr_accessor :instructions
+      attr_accessor :timeframe
+      attr_accessor :locations
+      attr_accessor :dataRequestStatus
+      attr_accessor :dataRequestAcceptedBy
+      attr_accessor :dataRequestAcceptedDate
+
+      def __xmlattr
+        @__xmlattr ||= {}
+      end
+
+      def xmlattr_id
+        __xmlattr[AttrId]
+      end
+
+      def xmlattr_id=(value)
+        __xmlattr[AttrId] = value
+      end
+
+      def initialize(name = nil, requesterDetails = nil, instructions = nil, timeframe = nil, locations = nil, dataRequestStatus = nil, dataRequestAcceptedBy = nil, dataRequestAcceptedDate = nil)
+        @name = name
+        @requesterDetails = requesterDetails
+        @instructions = instructions
+        @timeframe = timeframe
+        @locations = locations
+        @dataRequestStatus = dataRequestStatus
+        @dataRequestAcceptedBy = dataRequestAcceptedBy
+        @dataRequestAcceptedDate = dataRequestAcceptedDate
+        @__xmlattr = {}
+      end
+    end
+
     # {}statusType
     class StatusType < ::String
       Error = new("Error")
@@ -7014,7 +8081,6 @@ module PortfolioManager
       AdultEducation = new("Adult Education")
       AmbulatorySurgicalCenter = new("Ambulatory Surgical Center")
       Aquarium = new("Aquarium")
-      AutomobileDealership = new("Automobile Dealership")
       BankBranch = new("Bank Branch")
       BarNightclub = new("Bar/Nightclub")
       Barracks = new("Barracks")
@@ -7027,7 +8093,8 @@ module PortfolioManager
       Courthouse = new("Courthouse")
       DataCenter = new("Data Center")
       DistributionCenter = new("Distribution Center")
-      DrinkingWaterTreatmentDistribution = new("Drinking Water Treatment & Distribution")
+      DrinkingWaterTreatment38Distribution = new("Drinking Water Treatment &#38; Distribution")
+      ElectricVehicleChargingStation = new("Electric Vehicle Charging Station")
       EnclosedMall = new("Enclosed Mall")
       EnergyPowerStation = new("Energy/Power Station")
       FastFoodRestaurant = new("Fast Food Restaurant")
@@ -7036,7 +8103,7 @@ module PortfolioManager
       FitnessCenterHealthClubGym = new("Fitness Center/Health Club/Gym")
       FoodSales = new("Food Sales")
       FoodService = new("Food Service")
-      HospitalGeneralMedicalSurgical = new("Hospital (General Medical & Surgical)")
+      HospitalGeneralMedical38Surgical = new("Hospital (General Medical &#38; Surgical)")
       Hotel = new("Hotel")
       IceCurlingRink = new("Ice/Curling Rink")
       IndoorArena = new("Indoor Arena")
@@ -7092,6 +8159,7 @@ module PortfolioManager
       SwimmingPool = new("Swimming Pool")
       TransportationTerminalStation = new("Transportation Terminal/Station")
       UrgentCareClinicOtherOutpatient = new("Urgent Care/Clinic/Other Outpatient")
+      VehicleDealership = new("Vehicle Dealership")
       VeterinaryOffice = new("Veterinary Office")
       VocationalSchool = new("Vocational School")
       WastewaterTreatmentPlant = new("Wastewater Treatment Plant")
@@ -7403,6 +8471,21 @@ module PortfolioManager
       MillionGallonsPerDay = new("Million Gallons per Day")
     end
 
+    # {}customUnitsType
+    class CustomUnitsType < ::String
+      Feet = new("Feet")
+      GallonsUK = new("Gallons (UK)")
+      GallonsUS = new("Gallons (US)")
+      Kilogram = new("Kilogram")
+      Meters = new("Meters")
+      Other = new("Other")
+      Pounds = new("Pounds")
+      SquareFeet = new("Square Feet")
+      SquareMeters = new("Square Meters")
+      TonnesMetric = new("Tonnes (metric)")
+      TonsShort = new("Tons (short)")
+    end
+
     # {}lengthUnitsType
     class LengthUnitsType < ::String
       Feet = new("Feet")
@@ -7607,11 +8690,17 @@ module PortfolioManager
       Date = new("date")
     end
 
+    # {}periodType
+    class PeriodType < ::String
+      BASELINE = new("BASELINE")
+      CURRENT = new("CURRENT")
+    end
+
     # {}categoryType
     class CategoryType < ::String
       BehavioralOutreach = new("Behavioral/Outreach")
       FanSystemsStage4 = new("Fan Systems (Stage 4)")
-      HeatingCoolingPlantStage5 = new("Heating & Cooling Plant (Stage 5)")
+      Heating38CoolingPlantStage5 = new("Heating &#38; Cooling Plant (Stage 5)")
       LightingStage2 = new("Lighting (Stage 2)")
       LoadReductionsStage3 = new("Load Reductions (Stage 3)")
       OtherTechnologiesStrategies = new("Other Technologies/Strategies")
@@ -7888,7 +8977,7 @@ module PortfolioManager
     end
 
     # {}optionalCost
-    #  any of xs:decimal emptyString
+    #  any of emptyString xs:decimal
     class OptionalCost < ::String
     end
 
@@ -7898,7 +8987,7 @@ module PortfolioManager
     end
 
     # {}generationPlantType
-    #  any of xs:integer emptyString
+    #  any of emptyString xs:integer
     class GenerationPlantType < ::String
     end
 
@@ -7924,18 +9013,18 @@ module PortfolioManager
       TenantPlugLoadElectricity = new("Tenant Plug Load/Electricity")
     end
 
+    # {}baselineDateType
+    #  any of systemDeterminedString xs:gYearMonth
+    class BaselineDateType < ::String
+    end
+
     # {}systemDeterminedString
     class SystemDeterminedString < ::String
       SystemDetermined = new("System Determined")
     end
 
-    # {}baselineDateType
-    #  any of xs:gYearMonth systemDeterminedString
-    class BaselineDateType < ::String
-    end
-
     # {}optionalWasteCost
-    #  any of xs:decimal emptyString
+    #  any of emptyString xs:decimal
     class OptionalWasteCost < ::String
     end
 
@@ -8023,6 +9112,45 @@ module PortfolioManager
       WV = new("WV")
       WY = new("WY")
       YT = new("YT")
+    end
+
+    # {}reportingIntervalType
+    class ReportingIntervalType < ::String
+      MONTHLY = new("MONTHLY")
+      QUARTERLY = new("QUARTERLY")
+      YEARLY = new("YEARLY")
+    end
+
+    # {}reportType
+    class ReportType < ::String
+      CUSTOM = new("CUSTOM")
+      ENERGY_STAR = new("ENERGY_STAR")
+    end
+
+    # {}reportStatusType
+    class ReportStatusType < ::String
+      FAILED = new("FAILED")
+      GENERATED = new("GENERATED")
+      GENERATED_WITH_ERRORS = new("GENERATED_WITH_ERRORS")
+      INITIALIZED = new("INITIALIZED")
+      IN_PROCESS = new("IN_PROCESS")
+      READY_FOR_DOWNLOAD = new("READY_FOR_DOWNLOAD")
+      SENT = new("SENT")
+      SUBMITTED = new("SUBMITTED")
+    end
+
+    # {}dataRequestStatusType
+    class DataRequestStatusType < ::String
+      ALL = new("ALL")
+      CLOSED = new("CLOSED")
+      OPEN = new("OPEN")
+    end
+
+    # {}meterCategoryType
+    class MeterCategoryType < ::String
+      ENERGY = new("ENERGY")
+      WASTE = new("WASTE")
+      WATER = new("WATER")
     end
 
     # {}accountInfo
@@ -8451,6 +9579,22 @@ module PortfolioManager
     #   @return [PortfolioManager::Xml::UseDecimalType]
     # @!attribute [rw] commonEntrance
     #   @return [PortfolioManager::Xml::UseYesNoType]
+    # @!attribute [rw] numberOfCookingEquipmentUnits
+    #   @return [PortfolioManager::Xml::UseIntegerType]
+    # @!attribute [rw] numberOfWarmingHeatingEquipmentUnits
+    #   @return [PortfolioManager::Xml::UseIntegerType]
+    # @!attribute [rw] ceilingHeight
+    #   @return [PortfolioManager::Xml::CeilingHeightUnitsType]
+    # @!attribute [rw] averageNumberOfVehiclesInInventory
+    #   @return [PortfolioManager::Xml::UseDecimalType]
+    # @!attribute [rw] deliveryFacility
+    #   @return [PortfolioManager::Xml::UseYesNoType]
+    # @!attribute [rw] numberOfLettersPackagesPerYear
+    #   @return [PortfolioManager::Xml::UseIntegerType]
+    # @!attribute [rw] customUseDetail1
+    #   @return [PortfolioManager::Xml::CustomUseDetailsType]
+    # @!attribute [rw] customUseDetail2
+    #   @return [PortfolioManager::Xml::CustomUseDetailsType]
     # @!attribute [rw] links
     #   @return [PortfolioManager::Xml::LinksType]
     class UseDetails
@@ -8551,9 +9695,17 @@ module PortfolioManager
       attr_accessor :clearHeight
       attr_accessor :numberOfSterilizationUnits
       attr_accessor :commonEntrance
+      attr_accessor :numberOfCookingEquipmentUnits
+      attr_accessor :numberOfWarmingHeatingEquipmentUnits
+      attr_accessor :ceilingHeight
+      attr_accessor :averageNumberOfVehiclesInInventory
+      attr_accessor :deliveryFacility
+      attr_accessor :numberOfLettersPackagesPerYear
+      attr_accessor :customUseDetail1
+      attr_accessor :customUseDetail2
       attr_accessor :links
 
-      def initialize(amountOfLaundryProcessedAnnually = nil, averageEffluentBiologicalOxygenDemand = nil, averageInfluentBiologicalOxygenDemand = nil, averageNumberOfResidents = nil, completelyEnclosedFootage = nil, cookingFacilities = nil, coolingEquipmentRedundancy = nil, enclosedFloorArea = nil, enrollment = nil, exteriorEntranceToThePublic = nil, fixedFilmTrickleFiltrationProcess = nil, fullServiceSpaFloorArea = nil, areaOfAllWalkInRefrigerationUnits = nil, lengthOfAllOpenClosedRefrigerationUnits = nil, governmentSubsidizedHousing = nil, grantDollars = nil, gymCenterFloorArea = nil, gymnasiumFloorArea = nil, hasComputerLab = nil, hasDiningHall = nil, hasLaboratory = nil, hoursPerDayGuestsOnsite = nil, iceEvents = nil, isHighSchool = nil, isTertiaryCare = nil, itEnergyMeterConfiguration = nil, laundryFacility = nil, maximumNumberOfFloors = nil, maximumResidentCapacity = nil, licensedBedCapacity = nil, monthsInUse = nil, monthsMainIndoorIceRinkInUse = nil, numberOfBedrooms = nil, numberOfCashRegisters = nil, numberOfCommercialRefrigerationUnits = nil, numberOfCommercialWashingMachines = nil, numberOfComputers = nil, numberOfConcertShowEventsPerYear = nil, numberOfResidentialLivingUnitsLowRiseSetting = nil, numberOfFTEWorkers = nil, numberOfGuestMealsServedPerYear = nil, numberOfLaundryHookupsInAllUnits = nil, numberOfLaundryHookupsInCommonArea = nil, numberOfMriMachines = nil, numberOfOpenClosedRefrigerationUnits = nil, numberOfPeople = nil, numberOfResidentialLiftSystems = nil, numberOfResidentialLivingUnits = nil, numberOfResidentialWashingMachines = nil, numberOfRooms = nil, numberOfHotelRooms = nil, numberOfSpecialOtherEventsPerYear = nil, numberOfSportingEventsPerYear = nil, numberOfStaffedBeds = nil, numberOfSurgicalOperatingBeds = nil, numberOfWalkInRefrigerationUnits = nil, numberOfWeekdaysOpen = nil, numberOfWorkers = nil, numberOfIndoorIceRinks = nil, numberOfWeeklyIceResurfacingForAllRinks = nil, numberOfCurlingSheets = nil, nutrientRemoval = nil, onSiteLaundryFacility = nil, openFootage = nil, openOnWeekends = nil, ownedBy = nil, partiallyEnclosedFootage = nil, percentCooled = nil, percentHeated = nil, numberOfResidentialLivingUnitsMidRiseSetting = nil, percentOfGrossFloorAreaThatIsCommonSpaceOnly = nil, percentOfficeCooled = nil, percentOfficeHeated = nil, totalIceRinkSurfaceAreaForAllRinks = nil, plantDesignFlowRate = nil, poolLocation = nil, poolSize = nil, numberOfResidentialLivingUnitsHighRiseSetting = nil, residentPopulation = nil, schoolDistrict = nil, seatingCapacity = nil, singleStore = nil, totalGrossFloorArea = nil, estimatesApplied = nil, upsSystemRedundancy = nil, sizeOfElectronicScoreBoards = nil, spectatorSeatingCapacity = nil, supplementalHeating = nil, studentSeatingCapacity = nil, surgeryCenterFloorArea = nil, weeklyOperatingHours = nil, percentUsedForColdStorage = nil, grossFloorAreaUsedForFoodPreparation = nil, grossFloorAreaHotelConferenceSpace = nil, clearHeight = nil, numberOfSterilizationUnits = nil, commonEntrance = nil, links = nil)
+      def initialize(amountOfLaundryProcessedAnnually = nil, averageEffluentBiologicalOxygenDemand = nil, averageInfluentBiologicalOxygenDemand = nil, averageNumberOfResidents = nil, completelyEnclosedFootage = nil, cookingFacilities = nil, coolingEquipmentRedundancy = nil, enclosedFloorArea = nil, enrollment = nil, exteriorEntranceToThePublic = nil, fixedFilmTrickleFiltrationProcess = nil, fullServiceSpaFloorArea = nil, areaOfAllWalkInRefrigerationUnits = nil, lengthOfAllOpenClosedRefrigerationUnits = nil, governmentSubsidizedHousing = nil, grantDollars = nil, gymCenterFloorArea = nil, gymnasiumFloorArea = nil, hasComputerLab = nil, hasDiningHall = nil, hasLaboratory = nil, hoursPerDayGuestsOnsite = nil, iceEvents = nil, isHighSchool = nil, isTertiaryCare = nil, itEnergyMeterConfiguration = nil, laundryFacility = nil, maximumNumberOfFloors = nil, maximumResidentCapacity = nil, licensedBedCapacity = nil, monthsInUse = nil, monthsMainIndoorIceRinkInUse = nil, numberOfBedrooms = nil, numberOfCashRegisters = nil, numberOfCommercialRefrigerationUnits = nil, numberOfCommercialWashingMachines = nil, numberOfComputers = nil, numberOfConcertShowEventsPerYear = nil, numberOfResidentialLivingUnitsLowRiseSetting = nil, numberOfFTEWorkers = nil, numberOfGuestMealsServedPerYear = nil, numberOfLaundryHookupsInAllUnits = nil, numberOfLaundryHookupsInCommonArea = nil, numberOfMriMachines = nil, numberOfOpenClosedRefrigerationUnits = nil, numberOfPeople = nil, numberOfResidentialLiftSystems = nil, numberOfResidentialLivingUnits = nil, numberOfResidentialWashingMachines = nil, numberOfRooms = nil, numberOfHotelRooms = nil, numberOfSpecialOtherEventsPerYear = nil, numberOfSportingEventsPerYear = nil, numberOfStaffedBeds = nil, numberOfSurgicalOperatingBeds = nil, numberOfWalkInRefrigerationUnits = nil, numberOfWeekdaysOpen = nil, numberOfWorkers = nil, numberOfIndoorIceRinks = nil, numberOfWeeklyIceResurfacingForAllRinks = nil, numberOfCurlingSheets = nil, nutrientRemoval = nil, onSiteLaundryFacility = nil, openFootage = nil, openOnWeekends = nil, ownedBy = nil, partiallyEnclosedFootage = nil, percentCooled = nil, percentHeated = nil, numberOfResidentialLivingUnitsMidRiseSetting = nil, percentOfGrossFloorAreaThatIsCommonSpaceOnly = nil, percentOfficeCooled = nil, percentOfficeHeated = nil, totalIceRinkSurfaceAreaForAllRinks = nil, plantDesignFlowRate = nil, poolLocation = nil, poolSize = nil, numberOfResidentialLivingUnitsHighRiseSetting = nil, residentPopulation = nil, schoolDistrict = nil, seatingCapacity = nil, singleStore = nil, totalGrossFloorArea = nil, estimatesApplied = nil, upsSystemRedundancy = nil, sizeOfElectronicScoreBoards = nil, spectatorSeatingCapacity = nil, supplementalHeating = nil, studentSeatingCapacity = nil, surgeryCenterFloorArea = nil, weeklyOperatingHours = nil, percentUsedForColdStorage = nil, grossFloorAreaUsedForFoodPreparation = nil, grossFloorAreaHotelConferenceSpace = nil, clearHeight = nil, numberOfSterilizationUnits = nil, commonEntrance = nil, numberOfCookingEquipmentUnits = nil, numberOfWarmingHeatingEquipmentUnits = nil, ceilingHeight = nil, averageNumberOfVehiclesInInventory = nil, deliveryFacility = nil, numberOfLettersPackagesPerYear = nil, customUseDetail1 = nil, customUseDetail2 = nil, links = nil)
         @amountOfLaundryProcessedAnnually = amountOfLaundryProcessedAnnually
         @averageEffluentBiologicalOxygenDemand = averageEffluentBiologicalOxygenDemand
         @averageInfluentBiologicalOxygenDemand = averageInfluentBiologicalOxygenDemand
@@ -8651,6 +9803,14 @@ module PortfolioManager
         @clearHeight = clearHeight
         @numberOfSterilizationUnits = numberOfSterilizationUnits
         @commonEntrance = commonEntrance
+        @numberOfCookingEquipmentUnits = numberOfCookingEquipmentUnits
+        @numberOfWarmingHeatingEquipmentUnits = numberOfWarmingHeatingEquipmentUnits
+        @ceilingHeight = ceilingHeight
+        @averageNumberOfVehiclesInInventory = averageNumberOfVehiclesInInventory
+        @deliveryFacility = deliveryFacility
+        @numberOfLettersPackagesPerYear = numberOfLettersPackagesPerYear
+        @customUseDetail1 = customUseDetail1
+        @customUseDetail2 = customUseDetail2
         @links = links
       end
     end
@@ -9215,6 +10375,201 @@ module PortfolioManager
         @inUse = inUse
         @inactiveDate = inactiveDate
         @audit = audit
+      end
+    end
+
+    # {}templateType
+    class TemplateType < ::String
+      CUSTOM = new("CUSTOM")
+      ENERGY_STAR = new("ENERGY_STAR")
+    end
+
+    # {}responseStatus
+    # @!attribute [rw] status
+    #   @return [PortfolioManager::Xml::ReportStatusType]
+    # @!attribute [rw] description
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] generationStartDate
+    #   @return [SOAP::SOAPDateTime]
+    # @!attribute [rw] generationEndDate
+    #   @return [SOAP::SOAPDateTime]
+    # @!attribute [rw] submittedDate
+    #   @return [SOAP::SOAPDateTime]
+    # @!attribute [rw] sentDate
+    #   @return [SOAP::SOAPDateTime]
+    # @!attribute [rw] errors
+    #   @return [PortfolioManager::Xml::ResponseStatus::Errors]
+    class ResponseStatus < ReportStatusDef
+
+      # inner class for member: errors
+      # {}errors
+      # @!attribute [rw] links
+      #   @return [PortfolioManager::Xml::LinksType]
+      class Errors
+        attr_accessor :links
+
+        def initialize(links = nil)
+          @links = links
+        end
+      end
+
+      attr_accessor :status
+      attr_accessor :description
+      attr_accessor :generationStartDate
+      attr_accessor :generationEndDate
+      attr_accessor :submittedDate
+      attr_accessor :sentDate
+      attr_accessor :errors
+
+      def initialize(status = nil, description = nil, generationStartDate = nil, generationEndDate = nil, submittedDate = nil, sentDate = nil, errors = nil)
+        @status = status
+        @description = description
+        @generationStartDate = generationStartDate
+        @generationEndDate = generationEndDate
+        @submittedDate = submittedDate
+        @sentDate = sentDate
+        @errors = errors
+      end
+    end
+
+    # {}reportError
+    # @!attribute [rw] reportId
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] templateName
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] dateGenerated
+    #   @return [SOAP::SOAPDateTime]
+    # @!attribute [rw] numberOfProperties
+    #   @return [SOAP::SOAPInteger]
+    # @!attribute [rw] missingMetrics
+    #   @return [PortfolioManager::Xml::ReportError::MissingMetrics]
+    class ReportError
+
+      # inner class for member: missingMetrics
+      # {}missingMetrics
+      class MissingMetrics < ::Array
+
+        # {}propertyMissingMetric
+        # @!attribute [rw] yearEndingDate
+        #   @return [SOAP::SOAPDate]
+        # @!attribute [rw] metric
+        #   @return [PortfolioManager::Xml::ReportError::MissingMetrics::PropertyMissingMetric::Metric]
+        # @!attribute [rw] xmlattr_propertyId
+        #   @return [SOAP::SOAPLong]
+        # @!attribute [rw] xmlattr_propertyName
+        #   @return [SOAP::SOAPString]
+        class PropertyMissingMetric
+          AttrPropertyId = XSD::QName.new(nil, "propertyId")
+          AttrPropertyName = XSD::QName.new(nil, "propertyName")
+
+          # inner class for member: metric
+          # {}metric
+          # @!attribute [rw] error
+          #   @return [SOAP::SOAPString]
+          # @!attribute [rw] xmlattr_name
+          #   @return [SOAP::SOAPString]
+          # @!attribute [rw] xmlattr_id
+          #   @return [SOAP::SOAPLong]
+          class Metric
+            AttrId = XSD::QName.new(nil, "id")
+            AttrName = XSD::QName.new(nil, "name")
+
+            attr_accessor :error
+
+            def __xmlattr
+              @__xmlattr ||= {}
+            end
+
+            def xmlattr_name
+              __xmlattr[AttrName]
+            end
+
+            def xmlattr_name=(value)
+              __xmlattr[AttrName] = value
+            end
+
+            def xmlattr_id
+              __xmlattr[AttrId]
+            end
+
+            def xmlattr_id=(value)
+              __xmlattr[AttrId] = value
+            end
+
+            def initialize(error = nil)
+              @error = error
+              @__xmlattr = {}
+            end
+          end
+
+          attr_accessor :yearEndingDate
+          attr_accessor :metric
+
+          def __xmlattr
+            @__xmlattr ||= {}
+          end
+
+          def xmlattr_propertyId
+            __xmlattr[AttrPropertyId]
+          end
+
+          def xmlattr_propertyId=(value)
+            __xmlattr[AttrPropertyId] = value
+          end
+
+          def xmlattr_propertyName
+            __xmlattr[AttrPropertyName]
+          end
+
+          def xmlattr_propertyName=(value)
+            __xmlattr[AttrPropertyName] = value
+          end
+
+          def initialize(yearEndingDate = nil, metric = [])
+            @yearEndingDate = yearEndingDate
+            @metric = metric
+            @__xmlattr = {}
+          end
+        end
+      end
+
+      attr_accessor :reportId
+      attr_accessor :templateName
+      attr_accessor :dateGenerated
+      attr_accessor :numberOfProperties
+      attr_accessor :missingMetrics
+
+      def initialize(reportId = nil, templateName = nil, dateGenerated = nil, numberOfProperties = nil, missingMetrics = nil)
+        @reportId = reportId
+        @templateName = templateName
+        @dateGenerated = dateGenerated
+        @numberOfProperties = numberOfProperties
+        @missingMetrics = missingMetrics
+      end
+    end
+
+    # {}sendDataResponse
+    # @!attribute [rw] additionalEmailAddresses
+    #   @return [PortfolioManager::Xml::SendDataResponse::AdditionalEmailAddresses]
+    # @!attribute [rw] fileFormat
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] submitWithErrors
+    #   @return [SOAP::SOAPBoolean]
+    class SendDataResponse
+
+      # inner class for member: additionalEmailAddresses
+      # {}additionalEmailAddresses
+      class AdditionalEmailAddresses < ::Array
+      end
+
+      attr_accessor :additionalEmailAddresses
+      attr_accessor :fileFormat
+      attr_accessor :submitWithErrors
+
+      def initialize(additionalEmailAddresses = nil, fileFormat = nil, submitWithErrors = nil)
+        @additionalEmailAddresses = additionalEmailAddresses
+        @fileFormat = fileFormat
+        @submitWithErrors = submitWithErrors
       end
     end
   end

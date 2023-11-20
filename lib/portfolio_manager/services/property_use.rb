@@ -26,7 +26,7 @@ module PortfolioManager
           # request altogether.
           #
           # @param property_id [Integer]
-          # @param property_use [PortfolioManager::Xml::BankBranchType, PortfolioManager::Xml::BarracksType, PortfolioManager::Xml::CollegeUniversityType, PortfolioManager::Xml::ConvenienceStoreWithGasStationType, PortfolioManager::Xml::ConvenienceStoreWithoutGasStationType, PortfolioManager::Xml::CourthouseType, PortfolioManager::Xml::DataCenterType, PortfolioManager::Xml::DistributionCenterType, PortfolioManager::Xml::DrinkingWaterTreatmentAndDistributionType, PortfolioManager::Xml::FinancialOfficeType, PortfolioManager::Xml::FoodSalesType, PortfolioManager::Xml::HospitalType, PortfolioManager::Xml::HotelType, PortfolioManager::Xml::IceCurlingRinkType, PortfolioManager::Xml::IndoorArenaType, PortfolioManager::Xml::K12SchoolType, PortfolioManager::Xml::MedicalOfficeType, PortfolioManager::Xml::MultifamilyHousingType, PortfolioManager::Xml::NonRefrigeratedWarehouseType, PortfolioManager::Xml::OfficeType, PortfolioManager::Xml::OtherStadiumType, PortfolioManager::Xml::ParkingType, PortfolioManager::Xml::RefrigeratedWarehouseType, PortfolioManager::Xml::ResidenceHallDormitoryType, PortfolioManager::Xml::ResidentialCareFacilityType, PortfolioManager::Xml::RetailType, PortfolioManager::Xml::SelfStorageFacilityType, PortfolioManager::Xml::SeniorLivingCommunityType, PortfolioManager::Xml::SingleFamilyHomeType, PortfolioManager::Xml::StadiumClosedType, PortfolioManager::Xml::StadiumOpenType, PortfolioManager::Xml::SupermarketType, PortfolioManager::Xml::SwimmingPoolType, PortfolioManager::Xml::WastewaterTreatmentPlantType, PortfolioManager::Xml::WholesaleClubSupercenterType, PortfolioManager::Xml::WorshipFacilityType]
+          # @param property_use [PortfolioManager::Xml::BankBranchType, PortfolioManager::Xml::BarracksType, PortfolioManager::Xml::CollegeUniversityType, PortfolioManager::Xml::ConvenienceStoreWithGasStationType, PortfolioManager::Xml::ConvenienceStoreWithoutGasStationType, PortfolioManager::Xml::CourthouseType, PortfolioManager::Xml::DataCenterType, PortfolioManager::Xml::DistributionCenterType, PortfolioManager::Xml::DrinkingWaterTreatmentAndDistributionType, PortfolioManager::Xml::EvChargingStationType, PortfolioManager::Xml::FinancialOfficeType, PortfolioManager::Xml::FoodSalesType, PortfolioManager::Xml::HospitalType, PortfolioManager::Xml::HotelType, PortfolioManager::Xml::IceCurlingRinkType, PortfolioManager::Xml::IndoorArenaType, PortfolioManager::Xml::K12SchoolType, PortfolioManager::Xml::MailingCenterPostOfficeType, PortfolioManager::Xml::MedicalOfficeType, PortfolioManager::Xml::MultifamilyHousingType, PortfolioManager::Xml::NonRefrigeratedWarehouseType, PortfolioManager::Xml::OfficeType, PortfolioManager::Xml::OtherStadiumType, PortfolioManager::Xml::OtherType, PortfolioManager::Xml::ParkingType, PortfolioManager::Xml::RefrigeratedWarehouseType, PortfolioManager::Xml::ResidenceHallDormitoryType, PortfolioManager::Xml::ResidentialCareFacilityType, PortfolioManager::Xml::RetailType, PortfolioManager::Xml::SelfStorageFacilityType, PortfolioManager::Xml::SeniorLivingCommunityType, PortfolioManager::Xml::SingleFamilyHomeType, PortfolioManager::Xml::StadiumClosedType, PortfolioManager::Xml::StadiumOpenType, PortfolioManager::Xml::SupermarketType, PortfolioManager::Xml::SwimmingPoolType, PortfolioManager::Xml::VehicleDealershipType, PortfolioManager::Xml::WastewaterTreatmentPlantType, PortfolioManager::Xml::WholesaleClubSupercenterType, PortfolioManager::Xml::WorshipFacilityType]
           # @param elename [nil, String]
           # @return [PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
@@ -97,7 +97,7 @@ module PortfolioManager
           #
           # @param property_use_id [Integer]
           # @param klass [nil, Class]
-          # @return [PortfolioManager::Xml::BankBranchType, PortfolioManager::Xml::BarracksType, PortfolioManager::Xml::CollegeUniversityType, PortfolioManager::Xml::ConvenienceStoreWithGasStationType, PortfolioManager::Xml::ConvenienceStoreWithoutGasStationType, PortfolioManager::Xml::CourthouseType, PortfolioManager::Xml::DataCenterType, PortfolioManager::Xml::DistributionCenterType, PortfolioManager::Xml::DrinkingWaterTreatmentAndDistributionType, PortfolioManager::Xml::FinancialOfficeType, PortfolioManager::Xml::FoodSalesType, PortfolioManager::Xml::HospitalType, PortfolioManager::Xml::HotelType, PortfolioManager::Xml::IceCurlingRinkType, PortfolioManager::Xml::IndoorArenaType, PortfolioManager::Xml::K12SchoolType, PortfolioManager::Xml::MedicalOfficeType, PortfolioManager::Xml::MultifamilyHousingType, PortfolioManager::Xml::NonRefrigeratedWarehouseType, PortfolioManager::Xml::OfficeType, PortfolioManager::Xml::OtherStadiumType, PortfolioManager::Xml::ParkingType, PortfolioManager::Xml::RefrigeratedWarehouseType, PortfolioManager::Xml::ResidenceHallDormitoryType, PortfolioManager::Xml::ResidentialCareFacilityType, PortfolioManager::Xml::RetailType, PortfolioManager::Xml::SelfStorageFacilityType, PortfolioManager::Xml::SeniorLivingCommunityType, PortfolioManager::Xml::SingleFamilyHomeType, PortfolioManager::Xml::StadiumClosedType, PortfolioManager::Xml::StadiumOpenType, PortfolioManager::Xml::SupermarketType, PortfolioManager::Xml::SwimmingPoolType, PortfolioManager::Xml::WastewaterTreatmentPlantType, PortfolioManager::Xml::WholesaleClubSupercenterType, PortfolioManager::Xml::WorshipFacilityType, PortfolioManager::Xml::ResponseType]
+          # @return [PortfolioManager::Xml::BankBranchType, PortfolioManager::Xml::BarracksType, PortfolioManager::Xml::CollegeUniversityType, PortfolioManager::Xml::ConvenienceStoreWithGasStationType, PortfolioManager::Xml::ConvenienceStoreWithoutGasStationType, PortfolioManager::Xml::CourthouseType, PortfolioManager::Xml::DataCenterType, PortfolioManager::Xml::DistributionCenterType, PortfolioManager::Xml::DrinkingWaterTreatmentAndDistributionType, PortfolioManager::Xml::EvChargingStationType, PortfolioManager::Xml::FinancialOfficeType, PortfolioManager::Xml::FoodSalesType, PortfolioManager::Xml::HospitalType, PortfolioManager::Xml::HotelType, PortfolioManager::Xml::IceCurlingRinkType, PortfolioManager::Xml::IndoorArenaType, PortfolioManager::Xml::K12SchoolType, PortfolioManager::Xml::MailingCenterPostOfficeType, PortfolioManager::Xml::MedicalOfficeType, PortfolioManager::Xml::MultifamilyHousingType, PortfolioManager::Xml::NonRefrigeratedWarehouseType, PortfolioManager::Xml::OfficeType, PortfolioManager::Xml::OtherStadiumType, PortfolioManager::Xml::OtherType, PortfolioManager::Xml::ParkingType, PortfolioManager::Xml::RefrigeratedWarehouseType, PortfolioManager::Xml::ResidenceHallDormitoryType, PortfolioManager::Xml::ResidentialCareFacilityType, PortfolioManager::Xml::RetailType, PortfolioManager::Xml::SelfStorageFacilityType, PortfolioManager::Xml::SeniorLivingCommunityType, PortfolioManager::Xml::SingleFamilyHomeType, PortfolioManager::Xml::StadiumClosedType, PortfolioManager::Xml::StadiumOpenType, PortfolioManager::Xml::SupermarketType, PortfolioManager::Xml::SwimmingPoolType, PortfolioManager::Xml::VehicleDealershipType, PortfolioManager::Xml::WastewaterTreatmentPlantType, PortfolioManager::Xml::WholesaleClubSupercenterType, PortfolioManager::Xml::WorshipFacilityType, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/propertyUse/get
@@ -287,18 +287,140 @@ module PortfolioManager
         end
       end
 
+      # Custom Property Use and Use Details
+      module CustomPropertyUseAndUseDetails
+        # Live Environment
+        module Live
+          # Get Custom Property Use
+          #
+          # This web service returns the custom use detail information for a
+          # given property. If at least one custom use detail has not been
+          # defined then a 404 is returned. To create a new custom use detail,
+          # please {https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/customUseDetails/post see}. The information includes general data about the custom
+          # property use itself and its most current custom characteristics
+          # information. The corresponding property must already be shared to
+          # you.
+          #
+          # @param property_id [Integer]
+          # @return [PortfolioManager::Xml::CustomUseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/customUse/get
+          def get_custom_property_use(property_id)
+            request(Net::HTTP::Get, path_for("customUse", property_id), {}, {}, nil, nil, PortfolioManager::Xml::CustomUseType, basic_auth: true)
+          end
+
+          # Get Custom Use Details Revision History
+          #
+          # This web service retrieves the custom use details revision history
+          # for a specific property. The corresponding property must be already
+          # shared to you.
+          #
+          # @param property_id [Integer]
+          # @param current_as_of_start [Date]
+          # @param current_as_of_end [Date]
+          # @return [PortfolioManager::Xml::UseDetails]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/customUseDetailsRevisions/get
+          def get_custom_use_details_revision_history(property_id, current_as_of_start, current_as_of_end)
+            request(Net::HTTP::Get, path_for("customUse", property_id, "detailRevisions"), {
+              "currentAsOfStart" => current_as_of_start.strftime("%Y-%m-%d"),
+              "currentAsOfEnd" => current_as_of_end.strftime("%Y-%m-%d"),
+            }, {}, nil, nil, PortfolioManager::Xml::UseDetails, basic_auth: true)
+          end
+
+          # Edit Custom Use Detail - Revision
+          #
+          # This web service updates a specific custom use detail based on the
+          # information provided in the XML request. The update is performed by
+          # creating a revision history. It returns the unique identifier to the
+          # custom use detail and a link to the corresponding web service to
+          # retrieve it. The corresponding property must already be shared to
+          # you.
+          #
+          # A maximum of 2 custom use details can be created for a property. To
+          # learn more, please reference this {https://energystar.my.site.com/PortfolioManager/s/article/How-do-I-create-custom-use-details FAQ}.
+          #
+          # @param property_id [Integer]
+          # @param custom_use_details [PortfolioManager::Xml::CustomUseDetailsType]
+          # @param elename [nil, String]
+          # @return [PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/customUseDetails/post
+          def edit_custom_use_detail_revision(property_id, custom_use_details, elename = nil)
+            request(Net::HTTP::Post, path_for("customUse", property_id, "details"), {}, {}, custom_use_details, elename, PortfolioManager::Xml::ResponseType, basic_auth: true)
+          end
+
+          # Get Custom Use Detail
+          #
+          # This web service retrieves specific use detail information for a
+          # given custom use detail. The corresponding property must already be
+          # shared with you.
+          #
+          # @param details_id [Integer]
+          # @return [PortfolioManager::Xml::CustomUseDetailsType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/customUseDetails/get
+          def get_custom_use_detail(details_id)
+            request(Net::HTTP::Get, path_for("customUse", "details", details_id), {}, {}, nil, nil, PortfolioManager::Xml::CustomUseDetailsType, basic_auth: true)
+          end
+
+          # Edit Custom Use Details - Correction
+          #
+          # This web service updates a specific custom use detail based on the
+          # information provided in the XML request. The update is performed as
+          # a correction. It returns the unique identifier to the custom use
+          # detail and a link to the corresponding web service to retrieve it.
+          # The corresponding property must already be shared to you.
+          #
+          # @param details_id [Integer]
+          # @param custom_use_details [PortfolioManager::Xml::CustomUseDetailsType]
+          # @param elename [nil, String]
+          # @return [PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/customUseDetails/put
+          def edit_custom_use_details_correction(details_id, custom_use_details, elename = nil)
+            request(Net::HTTP::Put, path_for("customUse", "details", details_id), {}, {}, custom_use_details, elename, PortfolioManager::Xml::ResponseType, basic_auth: true)
+          end
+
+          # Delete Custom Use Detail
+          #
+          # This web service deletes a specific custom use detail. The
+          # corresponding property must already be shared to you.
+          #
+          # @param details_id [Integer]
+          # @return [PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/customUseDetails/delete
+          def delete_custom_use_detail(details_id)
+            request(Net::HTTP::Delete, path_for("customUse", "details", detail_id), {}, {}, nil, nil, PortfolioManager::Xml::ResponseType, basic_auth: true)
+          end
+        end
+
+        # Test Environment
+        module Test
+        end
+      end
+
       # All Property Use Services
       module All
         # Live Environment
         module Live
           include PortfolioManager::Services::PropertyUse::PropertyUse::Live
           include PortfolioManager::Services::PropertyUse::UseDetails::Live
+          include PortfolioManager::Services::PropertyUse::CustomPropertyUseAndUseDetails::Live
         end
 
         # Test Environment
         module Test
           include PortfolioManager::Services::PropertyUse::PropertyUse::Test
           include PortfolioManager::Services::PropertyUse::UseDetails::Test
+          include PortfolioManager::Services::PropertyUse::CustomPropertyUseAndUseDetails::Test
         end
       end
     end

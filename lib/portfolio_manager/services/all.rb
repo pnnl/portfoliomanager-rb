@@ -7,6 +7,7 @@ module PortfolioManager
         include PortfolioManager::Services::BasicAccount::All::Live
         include PortfolioManager::Services::Building::All::Live
         include PortfolioManager::Services::Connection::All::Live
+        include PortfolioManager::Services::HomeEnergyYardstick::All::Live
         include PortfolioManager::Services::Meter::All::Live
         include PortfolioManager::Services::Property::All::Live
         include PortfolioManager::Services::PropertyUse::All::Live
@@ -14,11 +15,12 @@ module PortfolioManager
         include PortfolioManager::Services::TargetFinder::All::Live
       end
 
-      # Test Environment  
+      # Test Environment
       module Test
         include PortfolioManager::Services::BasicAccount::All::Test
         include PortfolioManager::Services::Building::All::Test
         include PortfolioManager::Services::Connection::All::Test
+        include PortfolioManager::Services::HomeEnergyYardstick::All::Test
         include PortfolioManager::Services::Meter::All::Test
         include PortfolioManager::Services::Property::All::Test
         include PortfolioManager::Services::PropertyUse::All::Test

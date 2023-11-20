@@ -143,6 +143,29 @@ module PortfolioManager
 
         # Test Environment
         module Test
+          # Add Sample Properties
+          #
+          # This web service creates a set of sample properties in your account
+          # from the pool of sample properties defined by EPA and NRCan
+          # respectively. The actual number of properties created may differ
+          # from the count that you specify due to a sample property containing
+          # child properties that will also be created. This web service is only
+          # available within the Test environment. You can only create a maximum
+          # of 100 sample properties per request and no more than 1000
+          # properties may exist in your account to invoke this service.
+          #
+          # @param country_code [nil, "US", "CA"]
+          # @param create_count [nil, Integer]
+          # @return [PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/test/api/property/sample-testing/post
+          def create_sample_properties(country_code = nil, create_count = nil)
+            request(Net::HTTP::Post, path_for("createSampleProperties"), {
+              "countryCode" => country_code,
+              "createCount" => create_count,
+            }, {}, nil, nil, PortfolioManager::Xml::ResponseType, basic_auth: true)
+          end
         end
       end
 
