@@ -119,7 +119,7 @@ module PortfolioManager
             request.key?(key) ? "#{key}: #{request[key]}" : nil
           }.compact).collect { |s|
             "\t#{s}"
-          }.join("\n"))
+          }.join("\n")) if @debug
 
           response = http.request(request)
 
@@ -131,7 +131,7 @@ module PortfolioManager
             "Body: #{response.body}",
           ]).compact.collect { |s|
             "\t#{s}"
-          }.join("\n"))
+          }.join("\n")) if @debug
 
           if response.body.start_with?("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>")
             PortfolioManager::Mapper.instance.xml2obj(response.body, klass)
