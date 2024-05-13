@@ -949,94 +949,96 @@ module PortfolioManager
       :schema_name => XSD::QName.new(nil, "propertyUses"),
       :is_anonymous => true,
       :schema_qualified => true,
-      :schema_element => [ :choice,
-        ["prison", "PortfolioManager::Xml::OtherType[]"],
-        ["refrigeratedWarehouse", "PortfolioManager::Xml::RefrigeratedWarehouseType[]"],
-        ["retail", "PortfolioManager::Xml::RetailType[]"],
-        ["hospital", "PortfolioManager::Xml::HospitalType[]"],
-        ["medicalOffice", "PortfolioManager::Xml::MedicalOfficeType[]"],
-        ["dataCenter", "PortfolioManager::Xml::DataCenterType[]"],
-        ["courthouse", "PortfolioManager::Xml::CourthouseType[]"],
-        ["singleFamilyHome", "PortfolioManager::Xml::SingleFamilyHomeType[]"],
-        ["nonRefrigeratedWarehouse", "PortfolioManager::Xml::NonRefrigeratedWarehouseType[]"],
-        ["multifamilyHousing", "PortfolioManager::Xml::MultifamilyHousingType[]"],
-        ["office", "PortfolioManager::Xml::OfficeType[]"],
-        ["wholesaleClubSupercenter", "PortfolioManager::Xml::WholesaleClubSupercenterType[]"],
-        ["selfStorageFacility", "PortfolioManager::Xml::SelfStorageFacilityType[]"],
-        ["seniorLivingCommunity", "PortfolioManager::Xml::SeniorLivingCommunityType[]"],
-        ["residentialCareFacility", "PortfolioManager::Xml::ResidentialCareFacilityType[]"],
-        ["swimmingPool", "PortfolioManager::Xml::SwimmingPoolType[]"],
-        ["residenceHallDormitory", "PortfolioManager::Xml::ResidenceHallDormitoryType[]"],
-        ["wastewaterTreatmentPlant", "PortfolioManager::Xml::WastewaterTreatmentPlantType[]"],
-        ["distributionCenter", "PortfolioManager::Xml::DistributionCenterType[]"],
-        ["worshipFacility", "PortfolioManager::Xml::WorshipFacilityType[]"],
-        ["financialOffice", "PortfolioManager::Xml::FinancialOfficeType[]"],
-        ["drinkingWaterTreatmentAndDistribution", "PortfolioManager::Xml::DrinkingWaterTreatmentAndDistributionType[]"],
-        ["parking", "PortfolioManager::Xml::ParkingType[]"],
-        ["supermarket", "PortfolioManager::Xml::SupermarketType[]"],
-        ["barracks", "PortfolioManager::Xml::BarracksType[]"],
-        ["hotel", "PortfolioManager::Xml::HotelType[]"],
-        ["k12School", "PortfolioManager::Xml::K12SchoolType[]"],
-        ["bankBranch", "PortfolioManager::Xml::BankBranchType[]"],
-        ["collegeUniversity", "PortfolioManager::Xml::CollegeUniversityType[]"],
-        ["indoorArena", "PortfolioManager::Xml::IndoorArenaType[]"],
-        ["otherStadium", "PortfolioManager::Xml::OtherStadiumType[]"],
-        ["stadiumClosed", "PortfolioManager::Xml::StadiumClosedType[]"],
-        ["stadiumOpen", "PortfolioManager::Xml::StadiumOpenType[]"],
-        ["manufacturingIndustrialPlant", "PortfolioManager::Xml::OtherType[]"],
-        ["ambulatorySurgicalCenter", "PortfolioManager::Xml::OtherType[]"],
-        ["bowlingAlley", "PortfolioManager::Xml::OtherType[]"],
-        ["otherPublicServices", "PortfolioManager::Xml::OtherType[]"],
-        ["otherLodgingResidential", "PortfolioManager::Xml::OtherType[]"],
-        ["casino", "PortfolioManager::Xml::OtherType[]"],
-        ["personalServices", "PortfolioManager::Xml::OtherType[]"],
-        ["mailingCenterPostOffice", "PortfolioManager::Xml::MailingCenterPostOfficeType[]"],
-        ["library", "PortfolioManager::Xml::OtherType[]"],
-        ["otherSpecialityHospital", "PortfolioManager::Xml::OtherType[]"],
-        ["conventionCenter", "PortfolioManager::Xml::OtherType[]"],
-        ["veterinaryOffice", "PortfolioManager::Xml::OtherType[]"],
-        ["urgentCareClinicOtherOutpatient", "PortfolioManager::Xml::OtherType[]"],
-        ["energyPowerStation", "PortfolioManager::Xml::OtherType[]"],
-        ["otherServices", "PortfolioManager::Xml::OtherType[]"],
-        ["barNightclub", "PortfolioManager::Xml::OtherType[]"],
-        ["otherUtility", "PortfolioManager::Xml::OtherType[]"],
-        ["zoo", "PortfolioManager::Xml::OtherType[]"],
-        ["vehicleDealership", "PortfolioManager::Xml::VehicleDealershipType[]"],
-        ["museum", "PortfolioManager::Xml::OtherType[]"],
-        ["otherRecreation", "PortfolioManager::Xml::OtherType[]"],
-        ["otherRestaurantBar", "PortfolioManager::Xml::OtherType[]"],
-        ["lifestyleCenter", "PortfolioManager::Xml::OtherType[]"],
-        ["policeStation", "PortfolioManager::Xml::OtherType[]"],
-        ["preschoolDaycare", "PortfolioManager::Xml::OtherType[]"],
-        ["raceTrack", "PortfolioManager::Xml::OtherType[]"],
-        ["fastFoodRestaurant", "PortfolioManager::Xml::OtherType[]"],
-        ["laboratory", "PortfolioManager::Xml::OtherType[]"],
-        ["convenienceStoreWithoutGasStation", "PortfolioManager::Xml::ConvenienceStoreWithoutGasStationType[]"],
-        ["repairServices", "PortfolioManager::Xml::OtherType[]"],
-        ["otherTechnologyScience", "PortfolioManager::Xml::OtherType[]"],
-        ["fireStation", "PortfolioManager::Xml::OtherType[]"],
-        ["foodSales", "PortfolioManager::Xml::FoodSalesType[]"],
-        ["performingArts", "PortfolioManager::Xml::OtherType[]"],
-        ["outpatientRehabilitationPhysicalTherapy", "PortfolioManager::Xml::OtherType[]"],
-        ["stripMall", "PortfolioManager::Xml::OtherType[]"],
-        ["rollerRink", "PortfolioManager::Xml::OtherType[]"],
-        ["otherEducation", "PortfolioManager::Xml::OtherType[]"],
-        ["fitnessCenterHealthClubGym", "PortfolioManager::Xml::OtherType[]"],
-        ["aquarium", "PortfolioManager::Xml::OtherType[]"],
-        ["foodService", "PortfolioManager::Xml::OtherType[]"],
-        ["restaurant", "PortfolioManager::Xml::OtherType[]"],
-        ["enclosedMall", "PortfolioManager::Xml::OtherType[]"],
-        ["iceCurlingRink", "PortfolioManager::Xml::IceCurlingRinkType[]"],
-        ["adultEducation", "PortfolioManager::Xml::OtherType[]"],
-        ["otherEntertainmentPublicAssembly", "PortfolioManager::Xml::OtherType[]"],
-        ["movieTheater", "PortfolioManager::Xml::OtherType[]"],
-        ["transportationTerminalStation", "PortfolioManager::Xml::OtherType[]"],
-        ["vocationalSchool", "PortfolioManager::Xml::OtherType[]"],
-        ["socialMeetingHall", "PortfolioManager::Xml::OtherType[]"],
-        ["otherMall", "PortfolioManager::Xml::OtherType[]"],
-        ["convenienceStoreWithGasStation", "PortfolioManager::Xml::ConvenienceStoreWithGasStationType[]"],
-        ["other", "PortfolioManager::Xml::OtherType[]"],
-        ["electricVehicleChargingStation", "PortfolioManager::Xml::EvChargingStationType[]"]
+      :schema_element => [
+        [
+          ["prison", "PortfolioManager::Xml::OtherType[]"],
+          ["refrigeratedWarehouse", "PortfolioManager::Xml::RefrigeratedWarehouseType[]"],
+          ["retail", "PortfolioManager::Xml::RetailType[]"],
+          ["hospital", "PortfolioManager::Xml::HospitalType[]"],
+          ["medicalOffice", "PortfolioManager::Xml::MedicalOfficeType[]"],
+          ["dataCenter", "PortfolioManager::Xml::DataCenterType[]"],
+          ["courthouse", "PortfolioManager::Xml::CourthouseType[]"],
+          ["singleFamilyHome", "PortfolioManager::Xml::SingleFamilyHomeType[]"],
+          ["nonRefrigeratedWarehouse", "PortfolioManager::Xml::NonRefrigeratedWarehouseType[]"],
+          ["multifamilyHousing", "PortfolioManager::Xml::MultifamilyHousingType[]"],
+          ["office", "PortfolioManager::Xml::OfficeType[]"],
+          ["wholesaleClubSupercenter", "PortfolioManager::Xml::WholesaleClubSupercenterType[]"],
+          ["selfStorageFacility", "PortfolioManager::Xml::SelfStorageFacilityType[]"],
+          ["seniorLivingCommunity", "PortfolioManager::Xml::SeniorLivingCommunityType[]"],
+          ["residentialCareFacility", "PortfolioManager::Xml::ResidentialCareFacilityType[]"],
+          ["swimmingPool", "PortfolioManager::Xml::SwimmingPoolType[]"],
+          ["residenceHallDormitory", "PortfolioManager::Xml::ResidenceHallDormitoryType[]"],
+          ["wastewaterTreatmentPlant", "PortfolioManager::Xml::WastewaterTreatmentPlantType[]"],
+          ["distributionCenter", "PortfolioManager::Xml::DistributionCenterType[]"],
+          ["worshipFacility", "PortfolioManager::Xml::WorshipFacilityType[]"],
+          ["financialOffice", "PortfolioManager::Xml::FinancialOfficeType[]"],
+          ["drinkingWaterTreatmentAndDistribution", "PortfolioManager::Xml::DrinkingWaterTreatmentAndDistributionType[]"],
+          ["parking", "PortfolioManager::Xml::ParkingType[]"],
+          ["supermarket", "PortfolioManager::Xml::SupermarketType[]"],
+          ["barracks", "PortfolioManager::Xml::BarracksType[]"],
+          ["hotel", "PortfolioManager::Xml::HotelType[]"],
+          ["k12School", "PortfolioManager::Xml::K12SchoolType[]"],
+          ["bankBranch", "PortfolioManager::Xml::BankBranchType[]"],
+          ["collegeUniversity", "PortfolioManager::Xml::CollegeUniversityType[]"],
+          ["indoorArena", "PortfolioManager::Xml::IndoorArenaType[]"],
+          ["otherStadium", "PortfolioManager::Xml::OtherStadiumType[]"],
+          ["stadiumClosed", "PortfolioManager::Xml::StadiumClosedType[]"],
+          ["stadiumOpen", "PortfolioManager::Xml::StadiumOpenType[]"],
+          ["manufacturingIndustrialPlant", "PortfolioManager::Xml::OtherType[]"],
+          ["ambulatorySurgicalCenter", "PortfolioManager::Xml::OtherType[]"],
+          ["bowlingAlley", "PortfolioManager::Xml::OtherType[]"],
+          ["otherPublicServices", "PortfolioManager::Xml::OtherType[]"],
+          ["otherLodgingResidential", "PortfolioManager::Xml::OtherType[]"],
+          ["casino", "PortfolioManager::Xml::OtherType[]"],
+          ["personalServices", "PortfolioManager::Xml::OtherType[]"],
+          ["mailingCenterPostOffice", "PortfolioManager::Xml::MailingCenterPostOfficeType[]"],
+          ["library", "PortfolioManager::Xml::LibraryType[]"],
+          ["otherSpecialityHospital", "PortfolioManager::Xml::OtherType[]"],
+          ["conventionCenter", "PortfolioManager::Xml::OtherType[]"],
+          ["veterinaryOffice", "PortfolioManager::Xml::OtherType[]"],
+          ["urgentCareClinicOtherOutpatient", "PortfolioManager::Xml::OtherType[]"],
+          ["energyPowerStation", "PortfolioManager::Xml::OtherType[]"],
+          ["otherServices", "PortfolioManager::Xml::OtherType[]"],
+          ["barNightclub", "PortfolioManager::Xml::OtherType[]"],
+          ["otherUtility", "PortfolioManager::Xml::OtherType[]"],
+          ["zoo", "PortfolioManager::Xml::OtherType[]"],
+          ["vehicleDealership", "PortfolioManager::Xml::VehicleDealershipType[]"],
+          ["museum", "PortfolioManager::Xml::MuseumType[]"],
+          ["otherRecreation", "PortfolioManager::Xml::OtherType[]"],
+          ["otherRestaurantBar", "PortfolioManager::Xml::OtherType[]"],
+          ["lifestyleCenter", "PortfolioManager::Xml::OtherType[]"],
+          ["policeStation", "PortfolioManager::Xml::OtherType[]"],
+          ["preschoolDaycare", "PortfolioManager::Xml::OtherType[]"],
+          ["raceTrack", "PortfolioManager::Xml::OtherType[]"],
+          ["fastFoodRestaurant", "PortfolioManager::Xml::OtherType[]"],
+          ["laboratory", "PortfolioManager::Xml::OtherType[]"],
+          ["convenienceStoreWithoutGasStation", "PortfolioManager::Xml::ConvenienceStoreWithoutGasStationType[]"],
+          ["repairServices", "PortfolioManager::Xml::OtherType[]"],
+          ["otherTechnologyScience", "PortfolioManager::Xml::OtherType[]"],
+          ["fireStation", "PortfolioManager::Xml::OtherType[]"],
+          ["foodSales", "PortfolioManager::Xml::FoodSalesType[]"],
+          ["performingArts", "PortfolioManager::Xml::OtherType[]"],
+          ["outpatientRehabilitationPhysicalTherapy", "PortfolioManager::Xml::OtherType[]"],
+          ["stripMall", "PortfolioManager::Xml::OtherType[]"],
+          ["rollerRink", "PortfolioManager::Xml::OtherType[]"],
+          ["otherEducation", "PortfolioManager::Xml::OtherType[]"],
+          ["fitnessCenterHealthClubGym", "PortfolioManager::Xml::OtherType[]"],
+          ["aquarium", "PortfolioManager::Xml::OtherType[]"],
+          ["foodService", "PortfolioManager::Xml::OtherType[]"],
+          ["restaurant", "PortfolioManager::Xml::OtherType[]"],
+          ["enclosedMall", "PortfolioManager::Xml::OtherType[]"],
+          ["iceCurlingRink", "PortfolioManager::Xml::IceCurlingRinkType[]"],
+          ["adultEducation", "PortfolioManager::Xml::OtherType[]"],
+          ["otherEntertainmentPublicAssembly", "PortfolioManager::Xml::OtherType[]"],
+          ["movieTheater", "PortfolioManager::Xml::OtherType[]"],
+          ["transportationTerminalStation", "PortfolioManager::Xml::OtherType[]"],
+          ["vocationalSchool", "PortfolioManager::Xml::OtherType[]"],
+          ["socialMeetingHall", "PortfolioManager::Xml::OtherType[]"],
+          ["otherMall", "PortfolioManager::Xml::OtherType[]"],
+          ["convenienceStoreWithGasStation", "PortfolioManager::Xml::ConvenienceStoreWithGasStationType[]"],
+          ["other", "PortfolioManager::Xml::OtherType[]"],
+          ["electricVehicleChargingStation", "PortfolioManager::Xml::EvChargingStationType[]"]
+        ]
       ]
     )
 
@@ -2198,6 +2200,58 @@ module PortfolioManager
     )
 
     Registry.register(
+      :class => PortfolioManager::Xml::LibraryType,
+      :schema_type => XSD::QName.new(nil, "libraryType"),
+      :schema_element => [
+        ["name", nil],
+        ["useDetails", "PortfolioManager::Xml::LibraryType::UseDetails"],
+        ["audit", "PortfolioManager::Xml::LogType", [0, 1]]
+      ]
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::LibraryType::UseDetails,
+      :schema_name => XSD::QName.new(nil, "useDetails"),
+      :is_anonymous => true,
+      :schema_qualified => false,
+      :schema_element => [
+        ["totalGrossFloorArea", "PortfolioManager::Xml::GrossFloorAreaType"],
+        ["weeklyOperatingHours", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
+        ["numberOfWorkers", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
+        ["percentHeated", "PortfolioManager::Xml::PercentHeatedType", [0, 1]],
+        ["percentCooled", "PortfolioManager::Xml::PercentCooledType", [0, 1]],
+        ["numberOfComputers", "PortfolioManager::Xml::UseDecimalType", [0, 1]]
+      ]
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::MuseumType,
+      :schema_type => XSD::QName.new(nil, "museumType"),
+      :schema_element => [
+        ["name", nil],
+        ["useDetails", "PortfolioManager::Xml::MuseumType::UseDetails"],
+        ["audit", "PortfolioManager::Xml::LogType", [0, 1]]
+      ]
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::MuseumType::UseDetails,
+      :schema_name => XSD::QName.new(nil, "useDetails"),
+      :is_anonymous => true,
+      :schema_qualified => false,
+      :schema_element => [
+        ["totalGrossFloorArea", "PortfolioManager::Xml::GrossFloorAreaType"],
+        ["numberOfWorkers", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
+        ["precisionControlsForTemperatureAndHumidity", "PortfolioManager::Xml::UseYesNoType", [0, 1]],
+        ["grossFloorAreaThatIsExhibitSpace", "PortfolioManager::Xml::OptionalFloorAreaType", [0, 1]],
+        ["percentHeated", "PortfolioManager::Xml::PercentHeatedType", [0, 1]],
+        ["percentCooled", "PortfolioManager::Xml::PercentCooledType", [0, 1]],
+        ["numberOfComputers", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
+        ["weeklyOperatingHours", "PortfolioManager::Xml::UseDecimalType", [0, 1]]
+      ]
+    )
+
+    Registry.register(
       :class => PortfolioManager::Xml::PropertyDesignType,
       :schema_type => XSD::QName.new(nil, "propertyDesignType"),
       :schema_element => [
@@ -2271,7 +2325,7 @@ module PortfolioManager
           ["casino", "PortfolioManager::Xml::OtherType[]"],
           ["personalServices", "PortfolioManager::Xml::OtherType[]"],
           ["mailingCenterPostOffice", "PortfolioManager::Xml::MailingCenterPostOfficeType[]"],
-          ["library", "PortfolioManager::Xml::OtherType[]"],
+          ["library", "PortfolioManager::Xml::LibraryType[]"],
           ["otherSpecialityHospital", "PortfolioManager::Xml::OtherType[]"],
           ["conventionCenter", "PortfolioManager::Xml::OtherType[]"],
           ["veterinaryOffice", "PortfolioManager::Xml::OtherType[]"],
@@ -2282,7 +2336,7 @@ module PortfolioManager
           ["otherUtility", "PortfolioManager::Xml::OtherType[]"],
           ["zoo", "PortfolioManager::Xml::OtherType[]"],
           ["vehicleDealership", "PortfolioManager::Xml::VehicleDealershipType[]"],
-          ["museum", "PortfolioManager::Xml::OtherType[]"],
+          ["museum", "PortfolioManager::Xml::MuseumType[]"],
           ["otherRecreation", "PortfolioManager::Xml::OtherType[]"],
           ["otherRestaurantBar", "PortfolioManager::Xml::OtherType[]"],
           ["lifestyleCenter", "PortfolioManager::Xml::OtherType[]"],
@@ -2701,7 +2755,8 @@ module PortfolioManager
         XSD::QName.new(nil, "name") => "SOAP::SOAPString",
         XSD::QName.new(nil, "description") => "SOAP::SOAPString",
         XSD::QName.new(nil, "dataType") => "SOAP::SOAPString",
-        XSD::QName.new(nil, "uom") => "SOAP::SOAPString"
+        XSD::QName.new(nil, "uom") => "SOAP::SOAPString",
+        XSD::QName.new(nil, "availableToCustomMetrics") => "SOAP::SOAPBoolean"
       }
     )
 
@@ -2711,7 +2766,7 @@ module PortfolioManager
       :is_anonymous => true,
       :schema_qualified => true,
       :schema_element => [
-        ["metric", "PortfolioManager::Xml::ReportMetrics::Group::Metrics::Metric[]", [1, nil]]
+        ["metric", "PortfolioManager::Xml::ReportMetrics::Group::Metrics::Metric[]", [0, nil]]
       ]
     )
 
@@ -3029,13 +3084,18 @@ module PortfolioManager
     )
 
     Registry.register(
+      :class => PortfolioManager::Xml::IrrigationAreaUnitsType,
+      :schema_type => XSD::QName.new(nil, "irrigationAreaUnitsType")
+    )
+
+    Registry.register(
       :class => PortfolioManager::Xml::EmptyString,
       :schema_type => XSD::QName.new(nil, "emptyString")
     )
 
     Registry.register(
-      :class => PortfolioManager::Xml::IrrigationAreaUnitsType,
-      :schema_type => XSD::QName.new(nil, "irrigationAreaUnitsType")
+      :class => PortfolioManager::Xml::SystemDeterminedString,
+      :schema_type => XSD::QName.new(nil, "systemDeterminedString")
     )
 
     Registry.register(
@@ -3111,11 +3171,6 @@ module PortfolioManager
     Registry.register(
       :class => PortfolioManager::Xml::TenantCommonAreaEnergyType,
       :schema_type => XSD::QName.new(nil, "tenantCommonAreaEnergyType")
-    )
-
-    Registry.register(
-      :class => PortfolioManager::Xml::SystemDeterminedString,
-      :schema_type => XSD::QName.new(nil, "systemDeterminedString")
     )
 
     Registry.register(
@@ -3430,94 +3485,96 @@ module PortfolioManager
       :schema_name => XSD::QName.new(nil, "propertyUses"),
       :is_anonymous => true,
       :schema_qualified => true,
-      :schema_element => [ :choice,
-        ["prison", "PortfolioManager::Xml::OtherType[]"],
-        ["refrigeratedWarehouse", "PortfolioManager::Xml::RefrigeratedWarehouseType[]"],
-        ["retail", "PortfolioManager::Xml::RetailType[]"],
-        ["hospital", "PortfolioManager::Xml::HospitalType[]"],
-        ["medicalOffice", "PortfolioManager::Xml::MedicalOfficeType[]"],
-        ["dataCenter", "PortfolioManager::Xml::DataCenterType[]"],
-        ["courthouse", "PortfolioManager::Xml::CourthouseType[]"],
-        ["singleFamilyHome", "PortfolioManager::Xml::SingleFamilyHomeType[]"],
-        ["nonRefrigeratedWarehouse", "PortfolioManager::Xml::NonRefrigeratedWarehouseType[]"],
-        ["multifamilyHousing", "PortfolioManager::Xml::MultifamilyHousingType[]"],
-        ["office", "PortfolioManager::Xml::OfficeType[]"],
-        ["wholesaleClubSupercenter", "PortfolioManager::Xml::WholesaleClubSupercenterType[]"],
-        ["selfStorageFacility", "PortfolioManager::Xml::SelfStorageFacilityType[]"],
-        ["seniorLivingCommunity", "PortfolioManager::Xml::SeniorLivingCommunityType[]"],
-        ["residentialCareFacility", "PortfolioManager::Xml::ResidentialCareFacilityType[]"],
-        ["swimmingPool", "PortfolioManager::Xml::SwimmingPoolType[]"],
-        ["residenceHallDormitory", "PortfolioManager::Xml::ResidenceHallDormitoryType[]"],
-        ["wastewaterTreatmentPlant", "PortfolioManager::Xml::WastewaterTreatmentPlantType[]"],
-        ["distributionCenter", "PortfolioManager::Xml::DistributionCenterType[]"],
-        ["worshipFacility", "PortfolioManager::Xml::WorshipFacilityType[]"],
-        ["financialOffice", "PortfolioManager::Xml::FinancialOfficeType[]"],
-        ["drinkingWaterTreatmentAndDistribution", "PortfolioManager::Xml::DrinkingWaterTreatmentAndDistributionType[]"],
-        ["parking", "PortfolioManager::Xml::ParkingType[]"],
-        ["supermarket", "PortfolioManager::Xml::SupermarketType[]"],
-        ["barracks", "PortfolioManager::Xml::BarracksType[]"],
-        ["hotel", "PortfolioManager::Xml::HotelType[]"],
-        ["k12School", "PortfolioManager::Xml::K12SchoolType[]"],
-        ["bankBranch", "PortfolioManager::Xml::BankBranchType[]"],
-        ["collegeUniversity", "PortfolioManager::Xml::CollegeUniversityType[]"],
-        ["indoorArena", "PortfolioManager::Xml::IndoorArenaType[]"],
-        ["otherStadium", "PortfolioManager::Xml::OtherStadiumType[]"],
-        ["stadiumClosed", "PortfolioManager::Xml::StadiumClosedType[]"],
-        ["stadiumOpen", "PortfolioManager::Xml::StadiumOpenType[]"],
-        ["manufacturingIndustrialPlant", "PortfolioManager::Xml::OtherType[]"],
-        ["ambulatorySurgicalCenter", "PortfolioManager::Xml::OtherType[]"],
-        ["bowlingAlley", "PortfolioManager::Xml::OtherType[]"],
-        ["otherPublicServices", "PortfolioManager::Xml::OtherType[]"],
-        ["otherLodgingResidential", "PortfolioManager::Xml::OtherType[]"],
-        ["casino", "PortfolioManager::Xml::OtherType[]"],
-        ["personalServices", "PortfolioManager::Xml::OtherType[]"],
-        ["mailingCenterPostOffice", "PortfolioManager::Xml::MailingCenterPostOfficeType[]"],
-        ["library", "PortfolioManager::Xml::OtherType[]"],
-        ["otherSpecialityHospital", "PortfolioManager::Xml::OtherType[]"],
-        ["conventionCenter", "PortfolioManager::Xml::OtherType[]"],
-        ["veterinaryOffice", "PortfolioManager::Xml::OtherType[]"],
-        ["urgentCareClinicOtherOutpatient", "PortfolioManager::Xml::OtherType[]"],
-        ["energyPowerStation", "PortfolioManager::Xml::OtherType[]"],
-        ["otherServices", "PortfolioManager::Xml::OtherType[]"],
-        ["barNightclub", "PortfolioManager::Xml::OtherType[]"],
-        ["otherUtility", "PortfolioManager::Xml::OtherType[]"],
-        ["zoo", "PortfolioManager::Xml::OtherType[]"],
-        ["vehicleDealership", "PortfolioManager::Xml::VehicleDealershipType[]"],
-        ["museum", "PortfolioManager::Xml::OtherType[]"],
-        ["otherRecreation", "PortfolioManager::Xml::OtherType[]"],
-        ["otherRestaurantBar", "PortfolioManager::Xml::OtherType[]"],
-        ["lifestyleCenter", "PortfolioManager::Xml::OtherType[]"],
-        ["policeStation", "PortfolioManager::Xml::OtherType[]"],
-        ["preschoolDaycare", "PortfolioManager::Xml::OtherType[]"],
-        ["raceTrack", "PortfolioManager::Xml::OtherType[]"],
-        ["fastFoodRestaurant", "PortfolioManager::Xml::OtherType[]"],
-        ["laboratory", "PortfolioManager::Xml::OtherType[]"],
-        ["convenienceStoreWithoutGasStation", "PortfolioManager::Xml::ConvenienceStoreWithoutGasStationType[]"],
-        ["repairServices", "PortfolioManager::Xml::OtherType[]"],
-        ["otherTechnologyScience", "PortfolioManager::Xml::OtherType[]"],
-        ["fireStation", "PortfolioManager::Xml::OtherType[]"],
-        ["foodSales", "PortfolioManager::Xml::FoodSalesType[]"],
-        ["performingArts", "PortfolioManager::Xml::OtherType[]"],
-        ["outpatientRehabilitationPhysicalTherapy", "PortfolioManager::Xml::OtherType[]"],
-        ["stripMall", "PortfolioManager::Xml::OtherType[]"],
-        ["rollerRink", "PortfolioManager::Xml::OtherType[]"],
-        ["otherEducation", "PortfolioManager::Xml::OtherType[]"],
-        ["fitnessCenterHealthClubGym", "PortfolioManager::Xml::OtherType[]"],
-        ["aquarium", "PortfolioManager::Xml::OtherType[]"],
-        ["foodService", "PortfolioManager::Xml::OtherType[]"],
-        ["restaurant", "PortfolioManager::Xml::OtherType[]"],
-        ["enclosedMall", "PortfolioManager::Xml::OtherType[]"],
-        ["iceCurlingRink", "PortfolioManager::Xml::IceCurlingRinkType[]"],
-        ["adultEducation", "PortfolioManager::Xml::OtherType[]"],
-        ["otherEntertainmentPublicAssembly", "PortfolioManager::Xml::OtherType[]"],
-        ["movieTheater", "PortfolioManager::Xml::OtherType[]"],
-        ["transportationTerminalStation", "PortfolioManager::Xml::OtherType[]"],
-        ["vocationalSchool", "PortfolioManager::Xml::OtherType[]"],
-        ["socialMeetingHall", "PortfolioManager::Xml::OtherType[]"],
-        ["otherMall", "PortfolioManager::Xml::OtherType[]"],
-        ["convenienceStoreWithGasStation", "PortfolioManager::Xml::ConvenienceStoreWithGasStationType[]"],
-        ["other", "PortfolioManager::Xml::OtherType[]"],
-        ["electricVehicleChargingStation", "PortfolioManager::Xml::EvChargingStationType[]"]
+      :schema_element => [
+        [
+          ["prison", "PortfolioManager::Xml::OtherType[]"],
+          ["refrigeratedWarehouse", "PortfolioManager::Xml::RefrigeratedWarehouseType[]"],
+          ["retail", "PortfolioManager::Xml::RetailType[]"],
+          ["hospital", "PortfolioManager::Xml::HospitalType[]"],
+          ["medicalOffice", "PortfolioManager::Xml::MedicalOfficeType[]"],
+          ["dataCenter", "PortfolioManager::Xml::DataCenterType[]"],
+          ["courthouse", "PortfolioManager::Xml::CourthouseType[]"],
+          ["singleFamilyHome", "PortfolioManager::Xml::SingleFamilyHomeType[]"],
+          ["nonRefrigeratedWarehouse", "PortfolioManager::Xml::NonRefrigeratedWarehouseType[]"],
+          ["multifamilyHousing", "PortfolioManager::Xml::MultifamilyHousingType[]"],
+          ["office", "PortfolioManager::Xml::OfficeType[]"],
+          ["wholesaleClubSupercenter", "PortfolioManager::Xml::WholesaleClubSupercenterType[]"],
+          ["selfStorageFacility", "PortfolioManager::Xml::SelfStorageFacilityType[]"],
+          ["seniorLivingCommunity", "PortfolioManager::Xml::SeniorLivingCommunityType[]"],
+          ["residentialCareFacility", "PortfolioManager::Xml::ResidentialCareFacilityType[]"],
+          ["swimmingPool", "PortfolioManager::Xml::SwimmingPoolType[]"],
+          ["residenceHallDormitory", "PortfolioManager::Xml::ResidenceHallDormitoryType[]"],
+          ["wastewaterTreatmentPlant", "PortfolioManager::Xml::WastewaterTreatmentPlantType[]"],
+          ["distributionCenter", "PortfolioManager::Xml::DistributionCenterType[]"],
+          ["worshipFacility", "PortfolioManager::Xml::WorshipFacilityType[]"],
+          ["financialOffice", "PortfolioManager::Xml::FinancialOfficeType[]"],
+          ["drinkingWaterTreatmentAndDistribution", "PortfolioManager::Xml::DrinkingWaterTreatmentAndDistributionType[]"],
+          ["parking", "PortfolioManager::Xml::ParkingType[]"],
+          ["supermarket", "PortfolioManager::Xml::SupermarketType[]"],
+          ["barracks", "PortfolioManager::Xml::BarracksType[]"],
+          ["hotel", "PortfolioManager::Xml::HotelType[]"],
+          ["k12School", "PortfolioManager::Xml::K12SchoolType[]"],
+          ["bankBranch", "PortfolioManager::Xml::BankBranchType[]"],
+          ["collegeUniversity", "PortfolioManager::Xml::CollegeUniversityType[]"],
+          ["indoorArena", "PortfolioManager::Xml::IndoorArenaType[]"],
+          ["otherStadium", "PortfolioManager::Xml::OtherStadiumType[]"],
+          ["stadiumClosed", "PortfolioManager::Xml::StadiumClosedType[]"],
+          ["stadiumOpen", "PortfolioManager::Xml::StadiumOpenType[]"],
+          ["manufacturingIndustrialPlant", "PortfolioManager::Xml::OtherType[]"],
+          ["ambulatorySurgicalCenter", "PortfolioManager::Xml::OtherType[]"],
+          ["bowlingAlley", "PortfolioManager::Xml::OtherType[]"],
+          ["otherPublicServices", "PortfolioManager::Xml::OtherType[]"],
+          ["otherLodgingResidential", "PortfolioManager::Xml::OtherType[]"],
+          ["casino", "PortfolioManager::Xml::OtherType[]"],
+          ["personalServices", "PortfolioManager::Xml::OtherType[]"],
+          ["mailingCenterPostOffice", "PortfolioManager::Xml::MailingCenterPostOfficeType[]"],
+          ["library", "PortfolioManager::Xml::LibraryType[]"],
+          ["otherSpecialityHospital", "PortfolioManager::Xml::OtherType[]"],
+          ["conventionCenter", "PortfolioManager::Xml::OtherType[]"],
+          ["veterinaryOffice", "PortfolioManager::Xml::OtherType[]"],
+          ["urgentCareClinicOtherOutpatient", "PortfolioManager::Xml::OtherType[]"],
+          ["energyPowerStation", "PortfolioManager::Xml::OtherType[]"],
+          ["otherServices", "PortfolioManager::Xml::OtherType[]"],
+          ["barNightclub", "PortfolioManager::Xml::OtherType[]"],
+          ["otherUtility", "PortfolioManager::Xml::OtherType[]"],
+          ["zoo", "PortfolioManager::Xml::OtherType[]"],
+          ["vehicleDealership", "PortfolioManager::Xml::VehicleDealershipType[]"],
+          ["museum", "PortfolioManager::Xml::MuseumType[]"],
+          ["otherRecreation", "PortfolioManager::Xml::OtherType[]"],
+          ["otherRestaurantBar", "PortfolioManager::Xml::OtherType[]"],
+          ["lifestyleCenter", "PortfolioManager::Xml::OtherType[]"],
+          ["policeStation", "PortfolioManager::Xml::OtherType[]"],
+          ["preschoolDaycare", "PortfolioManager::Xml::OtherType[]"],
+          ["raceTrack", "PortfolioManager::Xml::OtherType[]"],
+          ["fastFoodRestaurant", "PortfolioManager::Xml::OtherType[]"],
+          ["laboratory", "PortfolioManager::Xml::OtherType[]"],
+          ["convenienceStoreWithoutGasStation", "PortfolioManager::Xml::ConvenienceStoreWithoutGasStationType[]"],
+          ["repairServices", "PortfolioManager::Xml::OtherType[]"],
+          ["otherTechnologyScience", "PortfolioManager::Xml::OtherType[]"],
+          ["fireStation", "PortfolioManager::Xml::OtherType[]"],
+          ["foodSales", "PortfolioManager::Xml::FoodSalesType[]"],
+          ["performingArts", "PortfolioManager::Xml::OtherType[]"],
+          ["outpatientRehabilitationPhysicalTherapy", "PortfolioManager::Xml::OtherType[]"],
+          ["stripMall", "PortfolioManager::Xml::OtherType[]"],
+          ["rollerRink", "PortfolioManager::Xml::OtherType[]"],
+          ["otherEducation", "PortfolioManager::Xml::OtherType[]"],
+          ["fitnessCenterHealthClubGym", "PortfolioManager::Xml::OtherType[]"],
+          ["aquarium", "PortfolioManager::Xml::OtherType[]"],
+          ["foodService", "PortfolioManager::Xml::OtherType[]"],
+          ["restaurant", "PortfolioManager::Xml::OtherType[]"],
+          ["enclosedMall", "PortfolioManager::Xml::OtherType[]"],
+          ["iceCurlingRink", "PortfolioManager::Xml::IceCurlingRinkType[]"],
+          ["adultEducation", "PortfolioManager::Xml::OtherType[]"],
+          ["otherEntertainmentPublicAssembly", "PortfolioManager::Xml::OtherType[]"],
+          ["movieTheater", "PortfolioManager::Xml::OtherType[]"],
+          ["transportationTerminalStation", "PortfolioManager::Xml::OtherType[]"],
+          ["vocationalSchool", "PortfolioManager::Xml::OtherType[]"],
+          ["socialMeetingHall", "PortfolioManager::Xml::OtherType[]"],
+          ["otherMall", "PortfolioManager::Xml::OtherType[]"],
+          ["convenienceStoreWithGasStation", "PortfolioManager::Xml::ConvenienceStoreWithGasStationType[]"],
+          ["other", "PortfolioManager::Xml::OtherType[]"],
+          ["electricVehicleChargingStation", "PortfolioManager::Xml::EvChargingStationType[]"]
+        ]
       ]
     )
 
@@ -5216,6 +5273,37 @@ module PortfolioManager
     )
 
     Registry.register(
+      :class => PortfolioManager::Xml::UseYesNoType,
+      :schema_name => XSD::QName.new(nil, "precisionControlsForTemperatureAndHumidity"),
+      :schema_element => [
+        ["audit", "PortfolioManager::Xml::LogType", [0, 1]],
+        ["value", "PortfolioManager::Xml::YesNo", [0, 1]]
+      ],
+      :schema_attribute => {
+        XSD::QName.new(nil, "id") => "SOAP::SOAPLong",
+        XSD::QName.new(nil, "currentAsOf") => "SOAP::SOAPDate",
+        XSD::QName.new(nil, "temporary") => "SOAP::SOAPBoolean",
+        XSD::QName.new(nil, "default") => "SOAP::SOAPString"
+      }
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::OptionalFloorAreaType,
+      :schema_name => XSD::QName.new(nil, "grossFloorAreaThatIsExhibitSpace"),
+      :schema_element => [
+        ["audit", "PortfolioManager::Xml::LogType", [0, 1]],
+        ["value", "SOAP::SOAPInt", [0, 1]]
+      ],
+      :schema_attribute => {
+        XSD::QName.new(nil, "id") => "SOAP::SOAPLong",
+        XSD::QName.new(nil, "currentAsOf") => "SOAP::SOAPDate",
+        XSD::QName.new(nil, "temporary") => "SOAP::SOAPBoolean",
+        XSD::QName.new(nil, "default") => "SOAP::SOAPString",
+        XSD::QName.new(nil, "units") => "SOAP::SOAPString"
+      }
+    )
+
+    Registry.register(
       :class => PortfolioManager::Xml::PropertyUse,
       :schema_name => XSD::QName.new(nil, "propertyUse"),
       :schema_element => [
@@ -6400,29 +6488,6 @@ module PortfolioManager
 
     Registry.register(
       :class => PortfolioManager::Xml::OtherType,
-      :schema_name => XSD::QName.new(nil, "library"),
-      :schema_element => [
-        ["name", nil],
-        ["useDetails", "PortfolioManager::Xml::OtherType::UseDetails"],
-        ["audit", "PortfolioManager::Xml::LogType", [0, 1]]
-      ]
-    )
-
-    Registry.register(
-      :class => PortfolioManager::Xml::OtherType::UseDetails,
-      :schema_name => XSD::QName.new(nil, "useDetails"),
-      :is_anonymous => true,
-      :schema_qualified => false,
-      :schema_element => [
-        ["totalGrossFloorArea", "PortfolioManager::Xml::GrossFloorAreaType"],
-        ["weeklyOperatingHours", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
-        ["numberOfComputers", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
-        ["numberOfWorkers", "PortfolioManager::Xml::UseDecimalType", [0, 1]]
-      ]
-    )
-
-    Registry.register(
-      :class => PortfolioManager::Xml::OtherType,
       :schema_name => XSD::QName.new(nil, "otherSpecialityHospital"),
       :schema_element => [
         ["name", nil],
@@ -6608,29 +6673,6 @@ module PortfolioManager
     Registry.register(
       :class => PortfolioManager::Xml::OtherType,
       :schema_name => XSD::QName.new(nil, "zoo"),
-      :schema_element => [
-        ["name", nil],
-        ["useDetails", "PortfolioManager::Xml::OtherType::UseDetails"],
-        ["audit", "PortfolioManager::Xml::LogType", [0, 1]]
-      ]
-    )
-
-    Registry.register(
-      :class => PortfolioManager::Xml::OtherType::UseDetails,
-      :schema_name => XSD::QName.new(nil, "useDetails"),
-      :is_anonymous => true,
-      :schema_qualified => false,
-      :schema_element => [
-        ["totalGrossFloorArea", "PortfolioManager::Xml::GrossFloorAreaType"],
-        ["weeklyOperatingHours", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
-        ["numberOfComputers", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
-        ["numberOfWorkers", "PortfolioManager::Xml::UseDecimalType", [0, 1]]
-      ]
-    )
-
-    Registry.register(
-      :class => PortfolioManager::Xml::OtherType,
-      :schema_name => XSD::QName.new(nil, "museum"),
       :schema_element => [
         ["name", nil],
         ["useDetails", "PortfolioManager::Xml::OtherType::UseDetails"],
@@ -7415,6 +7457,58 @@ module PortfolioManager
     )
 
     Registry.register(
+      :class => PortfolioManager::Xml::LibraryType,
+      :schema_name => XSD::QName.new(nil, "library"),
+      :schema_element => [
+        ["name", nil],
+        ["useDetails", "PortfolioManager::Xml::LibraryType::UseDetails"],
+        ["audit", "PortfolioManager::Xml::LogType", [0, 1]]
+      ]
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::LibraryType::UseDetails,
+      :schema_name => XSD::QName.new(nil, "useDetails"),
+      :is_anonymous => true,
+      :schema_qualified => false,
+      :schema_element => [
+        ["totalGrossFloorArea", "PortfolioManager::Xml::GrossFloorAreaType"],
+        ["weeklyOperatingHours", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
+        ["numberOfWorkers", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
+        ["percentHeated", "PortfolioManager::Xml::PercentHeatedType", [0, 1]],
+        ["percentCooled", "PortfolioManager::Xml::PercentCooledType", [0, 1]],
+        ["numberOfComputers", "PortfolioManager::Xml::UseDecimalType", [0, 1]]
+      ]
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::MuseumType,
+      :schema_name => XSD::QName.new(nil, "museum"),
+      :schema_element => [
+        ["name", nil],
+        ["useDetails", "PortfolioManager::Xml::MuseumType::UseDetails"],
+        ["audit", "PortfolioManager::Xml::LogType", [0, 1]]
+      ]
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::MuseumType::UseDetails,
+      :schema_name => XSD::QName.new(nil, "useDetails"),
+      :is_anonymous => true,
+      :schema_qualified => false,
+      :schema_element => [
+        ["totalGrossFloorArea", "PortfolioManager::Xml::GrossFloorAreaType"],
+        ["numberOfWorkers", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
+        ["precisionControlsForTemperatureAndHumidity", "PortfolioManager::Xml::UseYesNoType", [0, 1]],
+        ["grossFloorAreaThatIsExhibitSpace", "PortfolioManager::Xml::OptionalFloorAreaType", [0, 1]],
+        ["percentHeated", "PortfolioManager::Xml::PercentHeatedType", [0, 1]],
+        ["percentCooled", "PortfolioManager::Xml::PercentCooledType", [0, 1]],
+        ["numberOfComputers", "PortfolioManager::Xml::UseDecimalType", [0, 1]],
+        ["weeklyOperatingHours", "PortfolioManager::Xml::UseDecimalType", [0, 1]]
+      ]
+    )
+
+    Registry.register(
       :class => PortfolioManager::Xml::DesignBaseType,
       :schema_name => XSD::QName.new(nil, "design"),
       :schema_element => [
@@ -7475,7 +7569,7 @@ module PortfolioManager
           ["casino", "PortfolioManager::Xml::OtherType[]"],
           ["personalServices", "PortfolioManager::Xml::OtherType[]"],
           ["mailingCenterPostOffice", "PortfolioManager::Xml::MailingCenterPostOfficeType[]"],
-          ["library", "PortfolioManager::Xml::OtherType[]"],
+          ["library", "PortfolioManager::Xml::LibraryType[]"],
           ["otherSpecialityHospital", "PortfolioManager::Xml::OtherType[]"],
           ["conventionCenter", "PortfolioManager::Xml::OtherType[]"],
           ["veterinaryOffice", "PortfolioManager::Xml::OtherType[]"],
@@ -7486,7 +7580,7 @@ module PortfolioManager
           ["otherUtility", "PortfolioManager::Xml::OtherType[]"],
           ["zoo", "PortfolioManager::Xml::OtherType[]"],
           ["vehicleDealership", "PortfolioManager::Xml::VehicleDealershipType[]"],
-          ["museum", "PortfolioManager::Xml::OtherType[]"],
+          ["museum", "PortfolioManager::Xml::MuseumType[]"],
           ["otherRecreation", "PortfolioManager::Xml::OtherType[]"],
           ["otherRestaurantBar", "PortfolioManager::Xml::OtherType[]"],
           ["lifestyleCenter", "PortfolioManager::Xml::OtherType[]"],
@@ -7770,6 +7864,8 @@ module PortfolioManager
         ["numberOfLettersPackagesPerYear", "PortfolioManager::Xml::UseIntegerType"],
         ["customUseDetail1", "PortfolioManager::Xml::CustomUseDetailsType"],
         ["customUseDetail2", "PortfolioManager::Xml::CustomUseDetailsType"],
+        ["precisionControlsForTemperatureAndHumidity", "PortfolioManager::Xml::UseYesNoType"],
+        ["grossFloorAreaThatIsExhibitSpace", "PortfolioManager::Xml::OptionalFloorAreaType"],
         ["links", "PortfolioManager::Xml::LinksType", [0, 1]]
       ]
     )
@@ -7847,7 +7943,8 @@ module PortfolioManager
         XSD::QName.new(nil, "id") => "SOAP::SOAPLong",
         XSD::QName.new(nil, "standardApproved") => "SOAP::SOAPBoolean",
         XSD::QName.new(nil, "name") => "SOAP::SOAPString",
-        XSD::QName.new(nil, "description") => "SOAP::SOAPString"
+        XSD::QName.new(nil, "description") => "SOAP::SOAPString",
+        XSD::QName.new(nil, "group") => "SOAP::SOAPString"
       }
     )
 
@@ -8071,6 +8168,38 @@ module PortfolioManager
     )
 
     Registry.register(
+      :class => PortfolioManager::Xml::CustomMetric,
+      :schema_name => XSD::QName.new(nil, "customMetric"),
+      :schema_element => [
+        ["name", "SOAP::SOAPString", [0, 1]],
+        ["numeratorMetricId", "SOAP::SOAPLong"],
+        ["denominatorDetailTypeId", "SOAP::SOAPLong"]
+      ],
+      :schema_attribute => {
+        XSD::QName.new(nil, "id") => "SOAP::SOAPLong",
+        XSD::QName.new(nil, "unitOfMeasure") => "SOAP::SOAPString"
+      }
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::DetailsTypes,
+      :schema_name => XSD::QName.new(nil, "detailsTypes"),
+      :schema_element => [
+        ["detailType", "PortfolioManager::Xml::DetailType[]", [1, nil]]
+      ]
+    )
+
+    Registry.register(
+      :class => PortfolioManager::Xml::DetailType,
+      :schema_name => XSD::QName.new(nil, "detailType"),
+      :schema_element => [],
+      :schema_attribute => {
+        XSD::QName.new(nil, "id") => "SOAP::SOAPLong",
+        XSD::QName.new(nil, "name") => "SOAP::SOAPString"
+      }
+    )
+
+    Registry.register(
       :class => PortfolioManager::Xml::IndividualMeter,
       :schema_name => XSD::QName.new(nil, "individualMeter"),
       :schema_element => [
@@ -8147,7 +8276,8 @@ module PortfolioManager
         XSD::QName.new(nil, "name") => "SOAP::SOAPString",
         XSD::QName.new(nil, "description") => "SOAP::SOAPString",
         XSD::QName.new(nil, "dataType") => "SOAP::SOAPString",
-        XSD::QName.new(nil, "uom") => "SOAP::SOAPString"
+        XSD::QName.new(nil, "uom") => "SOAP::SOAPString",
+        XSD::QName.new(nil, "availableToCustomMetrics") => "SOAP::SOAPBoolean"
       }
     )
 
@@ -8157,7 +8287,7 @@ module PortfolioManager
       :is_anonymous => true,
       :schema_qualified => true,
       :schema_element => [
-        ["metric", "PortfolioManager::Xml::ReportMetrics::Group::Metrics::Metric[]", [1, nil]]
+        ["metric", "PortfolioManager::Xml::ReportMetrics::Group::Metrics::Metric[]", [0, nil]]
       ]
     )
 

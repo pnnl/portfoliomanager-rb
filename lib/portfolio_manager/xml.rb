@@ -3506,7 +3506,7 @@ module PortfolioManager
       # @!attribute [rw] mailingCenterPostOffice
       #   @return [PortfolioManager::Xml::MailingCenterPostOfficeType]
       # @!attribute [rw] library
-      #   @return [PortfolioManager::Xml::OtherType]
+      #   @return [PortfolioManager::Xml::LibraryType]
       # @!attribute [rw] otherSpecialityHospital
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] conventionCenter
@@ -3528,7 +3528,7 @@ module PortfolioManager
       # @!attribute [rw] vehicleDealership
       #   @return [PortfolioManager::Xml::VehicleDealershipType]
       # @!attribute [rw] museum
-      #   @return [PortfolioManager::Xml::OtherType]
+      #   @return [PortfolioManager::Xml::MuseumType]
       # @!attribute [rw] otherRecreation
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] otherRestaurantBar
@@ -6402,6 +6402,118 @@ module PortfolioManager
       end
     end
 
+    # {}libraryType
+    # @!attribute [rw] name
+    #   @return [Object]
+    # @!attribute [rw] useDetails
+    #   @return [PortfolioManager::Xml::LibraryType::UseDetails]
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    class LibraryType
+
+      # inner class for member: useDetails
+      # {}useDetails
+      # @!attribute [rw] totalGrossFloorArea
+      #   @return [PortfolioManager::Xml::GrossFloorAreaType]
+      # @!attribute [rw] weeklyOperatingHours
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] numberOfWorkers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] percentHeated
+      #   @return [PortfolioManager::Xml::PercentHeatedType]
+      # @!attribute [rw] percentCooled
+      #   @return [PortfolioManager::Xml::PercentCooledType]
+      # @!attribute [rw] numberOfComputers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      class UseDetails
+        attr_accessor :totalGrossFloorArea
+        attr_accessor :weeklyOperatingHours
+        attr_accessor :numberOfWorkers
+        attr_accessor :percentHeated
+        attr_accessor :percentCooled
+        attr_accessor :numberOfComputers
+
+        def initialize(totalGrossFloorArea = nil, weeklyOperatingHours = nil, numberOfWorkers = nil, percentHeated = nil, percentCooled = nil, numberOfComputers = nil)
+          @totalGrossFloorArea = totalGrossFloorArea
+          @weeklyOperatingHours = weeklyOperatingHours
+          @numberOfWorkers = numberOfWorkers
+          @percentHeated = percentHeated
+          @percentCooled = percentCooled
+          @numberOfComputers = numberOfComputers
+        end
+      end
+
+      attr_accessor :name
+      attr_accessor :useDetails
+      attr_accessor :audit
+
+      def initialize(name = nil, useDetails = nil, audit = nil)
+        @name = name
+        @useDetails = useDetails
+        @audit = audit
+      end
+    end
+
+    # {}museumType
+    # @!attribute [rw] name
+    #   @return [Object]
+    # @!attribute [rw] useDetails
+    #   @return [PortfolioManager::Xml::MuseumType::UseDetails]
+    # @!attribute [rw] audit
+    #   @return [PortfolioManager::Xml::LogType]
+    class MuseumType
+
+      # inner class for member: useDetails
+      # {}useDetails
+      # @!attribute [rw] totalGrossFloorArea
+      #   @return [PortfolioManager::Xml::GrossFloorAreaType]
+      # @!attribute [rw] numberOfWorkers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] precisionControlsForTemperatureAndHumidity
+      #   @return [PortfolioManager::Xml::UseYesNoType]
+      # @!attribute [rw] grossFloorAreaThatIsExhibitSpace
+      #   @return [PortfolioManager::Xml::OptionalFloorAreaType]
+      # @!attribute [rw] percentHeated
+      #   @return [PortfolioManager::Xml::PercentHeatedType]
+      # @!attribute [rw] percentCooled
+      #   @return [PortfolioManager::Xml::PercentCooledType]
+      # @!attribute [rw] numberOfComputers
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      # @!attribute [rw] weeklyOperatingHours
+      #   @return [PortfolioManager::Xml::UseDecimalType]
+      class UseDetails
+        attr_accessor :totalGrossFloorArea
+        attr_accessor :numberOfWorkers
+        attr_accessor :precisionControlsForTemperatureAndHumidity
+        attr_accessor :grossFloorAreaThatIsExhibitSpace
+        attr_accessor :percentHeated
+        attr_accessor :percentCooled
+        attr_accessor :numberOfComputers
+        attr_accessor :weeklyOperatingHours
+
+        def initialize(totalGrossFloorArea = nil, numberOfWorkers = nil, precisionControlsForTemperatureAndHumidity = nil, grossFloorAreaThatIsExhibitSpace = nil, percentHeated = nil, percentCooled = nil, numberOfComputers = nil, weeklyOperatingHours = nil)
+          @totalGrossFloorArea = totalGrossFloorArea
+          @numberOfWorkers = numberOfWorkers
+          @precisionControlsForTemperatureAndHumidity = precisionControlsForTemperatureAndHumidity
+          @grossFloorAreaThatIsExhibitSpace = grossFloorAreaThatIsExhibitSpace
+          @percentHeated = percentHeated
+          @percentCooled = percentCooled
+          @numberOfComputers = numberOfComputers
+          @weeklyOperatingHours = weeklyOperatingHours
+        end
+      end
+
+      attr_accessor :name
+      attr_accessor :useDetails
+      attr_accessor :audit
+
+      def initialize(name = nil, useDetails = nil, audit = nil)
+        @name = name
+        @useDetails = useDetails
+        @audit = audit
+      end
+    end
+
     # {}propertyDesignType
     # @!attribute [rw] name
     #   @return [SOAP::SOAPString]
@@ -6533,7 +6645,7 @@ module PortfolioManager
       # @!attribute [rw] mailingCenterPostOffice
       #   @return [PortfolioManager::Xml::MailingCenterPostOfficeType]
       # @!attribute [rw] library
-      #   @return [PortfolioManager::Xml::OtherType]
+      #   @return [PortfolioManager::Xml::LibraryType]
       # @!attribute [rw] otherSpecialityHospital
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] conventionCenter
@@ -6555,7 +6667,7 @@ module PortfolioManager
       # @!attribute [rw] vehicleDealership
       #   @return [PortfolioManager::Xml::VehicleDealershipType]
       # @!attribute [rw] museum
-      #   @return [PortfolioManager::Xml::OtherType]
+      #   @return [PortfolioManager::Xml::MuseumType]
       # @!attribute [rw] otherRecreation
       #   @return [PortfolioManager::Xml::OtherType]
       # @!attribute [rw] otherRestaurantBar
@@ -7548,7 +7660,10 @@ module PortfolioManager
           #   @return [SOAP::SOAPString]
           # @!attribute [rw] xmlattr_uom
           #   @return [SOAP::SOAPString]
+          # @!attribute [rw] xmlattr_availableToCustomMetrics
+          #   @return [SOAP::SOAPBoolean]
           class Metric
+            AttrAvailableToCustomMetrics = XSD::QName.new(nil, "availableToCustomMetrics")
             AttrDataType = XSD::QName.new(nil, "dataType")
             AttrDescription = XSD::QName.new(nil, "description")
             AttrId = XSD::QName.new(nil, "id")
@@ -7597,6 +7712,14 @@ module PortfolioManager
 
             def xmlattr_uom=(value)
               __xmlattr[AttrUom] = value
+            end
+
+            def xmlattr_availableToCustomMetrics
+              __xmlattr[AttrAvailableToCustomMetrics]
+            end
+
+            def xmlattr_availableToCustomMetrics=(value)
+              __xmlattr[AttrAvailableToCustomMetrics] = value
             end
 
             def initialize
@@ -8497,17 +8620,22 @@ module PortfolioManager
     class DecimalTwoPrecisionOrEmptyString < ::String
     end
 
-    # {}emptyString
-    class EmptyString < ::String
-      C_ = new("")
-    end
-
     # {}irrigationAreaUnitsType
     class IrrigationAreaUnitsType < ::String
       Acres = new("Acres")
       C_ = new("")
       SquareFeet = new("Square Feet")
       SquareMeters = new("Square Meters")
+    end
+
+    # {}emptyString
+    class EmptyString < ::String
+      C_ = new("")
+    end
+
+    # {}systemDeterminedString
+    class SystemDeterminedString < ::String
+      SystemDetermined = new("System Determined")
     end
 
     # {}acceptRejectType
@@ -9016,11 +9144,6 @@ module PortfolioManager
     # {}baselineDateType
     #  any of systemDeterminedString xs:gYearMonth
     class BaselineDateType < ::String
-    end
-
-    # {}systemDeterminedString
-    class SystemDeterminedString < ::String
-      SystemDetermined = new("System Determined")
     end
 
     # {}optionalWasteCost
@@ -9595,6 +9718,10 @@ module PortfolioManager
     #   @return [PortfolioManager::Xml::CustomUseDetailsType]
     # @!attribute [rw] customUseDetail2
     #   @return [PortfolioManager::Xml::CustomUseDetailsType]
+    # @!attribute [rw] precisionControlsForTemperatureAndHumidity
+    #   @return [PortfolioManager::Xml::UseYesNoType]
+    # @!attribute [rw] grossFloorAreaThatIsExhibitSpace
+    #   @return [PortfolioManager::Xml::OptionalFloorAreaType]
     # @!attribute [rw] links
     #   @return [PortfolioManager::Xml::LinksType]
     class UseDetails
@@ -9703,9 +9830,11 @@ module PortfolioManager
       attr_accessor :numberOfLettersPackagesPerYear
       attr_accessor :customUseDetail1
       attr_accessor :customUseDetail2
+      attr_accessor :precisionControlsForTemperatureAndHumidity
+      attr_accessor :grossFloorAreaThatIsExhibitSpace
       attr_accessor :links
 
-      def initialize(amountOfLaundryProcessedAnnually = nil, averageEffluentBiologicalOxygenDemand = nil, averageInfluentBiologicalOxygenDemand = nil, averageNumberOfResidents = nil, completelyEnclosedFootage = nil, cookingFacilities = nil, coolingEquipmentRedundancy = nil, enclosedFloorArea = nil, enrollment = nil, exteriorEntranceToThePublic = nil, fixedFilmTrickleFiltrationProcess = nil, fullServiceSpaFloorArea = nil, areaOfAllWalkInRefrigerationUnits = nil, lengthOfAllOpenClosedRefrigerationUnits = nil, governmentSubsidizedHousing = nil, grantDollars = nil, gymCenterFloorArea = nil, gymnasiumFloorArea = nil, hasComputerLab = nil, hasDiningHall = nil, hasLaboratory = nil, hoursPerDayGuestsOnsite = nil, iceEvents = nil, isHighSchool = nil, isTertiaryCare = nil, itEnergyMeterConfiguration = nil, laundryFacility = nil, maximumNumberOfFloors = nil, maximumResidentCapacity = nil, licensedBedCapacity = nil, monthsInUse = nil, monthsMainIndoorIceRinkInUse = nil, numberOfBedrooms = nil, numberOfCashRegisters = nil, numberOfCommercialRefrigerationUnits = nil, numberOfCommercialWashingMachines = nil, numberOfComputers = nil, numberOfConcertShowEventsPerYear = nil, numberOfResidentialLivingUnitsLowRiseSetting = nil, numberOfFTEWorkers = nil, numberOfGuestMealsServedPerYear = nil, numberOfLaundryHookupsInAllUnits = nil, numberOfLaundryHookupsInCommonArea = nil, numberOfMriMachines = nil, numberOfOpenClosedRefrigerationUnits = nil, numberOfPeople = nil, numberOfResidentialLiftSystems = nil, numberOfResidentialLivingUnits = nil, numberOfResidentialWashingMachines = nil, numberOfRooms = nil, numberOfHotelRooms = nil, numberOfSpecialOtherEventsPerYear = nil, numberOfSportingEventsPerYear = nil, numberOfStaffedBeds = nil, numberOfSurgicalOperatingBeds = nil, numberOfWalkInRefrigerationUnits = nil, numberOfWeekdaysOpen = nil, numberOfWorkers = nil, numberOfIndoorIceRinks = nil, numberOfWeeklyIceResurfacingForAllRinks = nil, numberOfCurlingSheets = nil, nutrientRemoval = nil, onSiteLaundryFacility = nil, openFootage = nil, openOnWeekends = nil, ownedBy = nil, partiallyEnclosedFootage = nil, percentCooled = nil, percentHeated = nil, numberOfResidentialLivingUnitsMidRiseSetting = nil, percentOfGrossFloorAreaThatIsCommonSpaceOnly = nil, percentOfficeCooled = nil, percentOfficeHeated = nil, totalIceRinkSurfaceAreaForAllRinks = nil, plantDesignFlowRate = nil, poolLocation = nil, poolSize = nil, numberOfResidentialLivingUnitsHighRiseSetting = nil, residentPopulation = nil, schoolDistrict = nil, seatingCapacity = nil, singleStore = nil, totalGrossFloorArea = nil, estimatesApplied = nil, upsSystemRedundancy = nil, sizeOfElectronicScoreBoards = nil, spectatorSeatingCapacity = nil, supplementalHeating = nil, studentSeatingCapacity = nil, surgeryCenterFloorArea = nil, weeklyOperatingHours = nil, percentUsedForColdStorage = nil, grossFloorAreaUsedForFoodPreparation = nil, grossFloorAreaHotelConferenceSpace = nil, clearHeight = nil, numberOfSterilizationUnits = nil, commonEntrance = nil, numberOfCookingEquipmentUnits = nil, numberOfWarmingHeatingEquipmentUnits = nil, ceilingHeight = nil, averageNumberOfVehiclesInInventory = nil, deliveryFacility = nil, numberOfLettersPackagesPerYear = nil, customUseDetail1 = nil, customUseDetail2 = nil, links = nil)
+      def initialize(amountOfLaundryProcessedAnnually = nil, averageEffluentBiologicalOxygenDemand = nil, averageInfluentBiologicalOxygenDemand = nil, averageNumberOfResidents = nil, completelyEnclosedFootage = nil, cookingFacilities = nil, coolingEquipmentRedundancy = nil, enclosedFloorArea = nil, enrollment = nil, exteriorEntranceToThePublic = nil, fixedFilmTrickleFiltrationProcess = nil, fullServiceSpaFloorArea = nil, areaOfAllWalkInRefrigerationUnits = nil, lengthOfAllOpenClosedRefrigerationUnits = nil, governmentSubsidizedHousing = nil, grantDollars = nil, gymCenterFloorArea = nil, gymnasiumFloorArea = nil, hasComputerLab = nil, hasDiningHall = nil, hasLaboratory = nil, hoursPerDayGuestsOnsite = nil, iceEvents = nil, isHighSchool = nil, isTertiaryCare = nil, itEnergyMeterConfiguration = nil, laundryFacility = nil, maximumNumberOfFloors = nil, maximumResidentCapacity = nil, licensedBedCapacity = nil, monthsInUse = nil, monthsMainIndoorIceRinkInUse = nil, numberOfBedrooms = nil, numberOfCashRegisters = nil, numberOfCommercialRefrigerationUnits = nil, numberOfCommercialWashingMachines = nil, numberOfComputers = nil, numberOfConcertShowEventsPerYear = nil, numberOfResidentialLivingUnitsLowRiseSetting = nil, numberOfFTEWorkers = nil, numberOfGuestMealsServedPerYear = nil, numberOfLaundryHookupsInAllUnits = nil, numberOfLaundryHookupsInCommonArea = nil, numberOfMriMachines = nil, numberOfOpenClosedRefrigerationUnits = nil, numberOfPeople = nil, numberOfResidentialLiftSystems = nil, numberOfResidentialLivingUnits = nil, numberOfResidentialWashingMachines = nil, numberOfRooms = nil, numberOfHotelRooms = nil, numberOfSpecialOtherEventsPerYear = nil, numberOfSportingEventsPerYear = nil, numberOfStaffedBeds = nil, numberOfSurgicalOperatingBeds = nil, numberOfWalkInRefrigerationUnits = nil, numberOfWeekdaysOpen = nil, numberOfWorkers = nil, numberOfIndoorIceRinks = nil, numberOfWeeklyIceResurfacingForAllRinks = nil, numberOfCurlingSheets = nil, nutrientRemoval = nil, onSiteLaundryFacility = nil, openFootage = nil, openOnWeekends = nil, ownedBy = nil, partiallyEnclosedFootage = nil, percentCooled = nil, percentHeated = nil, numberOfResidentialLivingUnitsMidRiseSetting = nil, percentOfGrossFloorAreaThatIsCommonSpaceOnly = nil, percentOfficeCooled = nil, percentOfficeHeated = nil, totalIceRinkSurfaceAreaForAllRinks = nil, plantDesignFlowRate = nil, poolLocation = nil, poolSize = nil, numberOfResidentialLivingUnitsHighRiseSetting = nil, residentPopulation = nil, schoolDistrict = nil, seatingCapacity = nil, singleStore = nil, totalGrossFloorArea = nil, estimatesApplied = nil, upsSystemRedundancy = nil, sizeOfElectronicScoreBoards = nil, spectatorSeatingCapacity = nil, supplementalHeating = nil, studentSeatingCapacity = nil, surgeryCenterFloorArea = nil, weeklyOperatingHours = nil, percentUsedForColdStorage = nil, grossFloorAreaUsedForFoodPreparation = nil, grossFloorAreaHotelConferenceSpace = nil, clearHeight = nil, numberOfSterilizationUnits = nil, commonEntrance = nil, numberOfCookingEquipmentUnits = nil, numberOfWarmingHeatingEquipmentUnits = nil, ceilingHeight = nil, averageNumberOfVehiclesInInventory = nil, deliveryFacility = nil, numberOfLettersPackagesPerYear = nil, customUseDetail1 = nil, customUseDetail2 = nil, precisionControlsForTemperatureAndHumidity = nil, grossFloorAreaThatIsExhibitSpace = nil, links = nil)
         @amountOfLaundryProcessedAnnually = amountOfLaundryProcessedAnnually
         @averageEffluentBiologicalOxygenDemand = averageEffluentBiologicalOxygenDemand
         @averageInfluentBiologicalOxygenDemand = averageInfluentBiologicalOxygenDemand
@@ -9811,6 +9940,8 @@ module PortfolioManager
         @numberOfLettersPackagesPerYear = numberOfLettersPackagesPerYear
         @customUseDetail1 = customUseDetail1
         @customUseDetail2 = customUseDetail2
+        @precisionControlsForTemperatureAndHumidity = precisionControlsForTemperatureAndHumidity
+        @grossFloorAreaThatIsExhibitSpace = grossFloorAreaThatIsExhibitSpace
         @links = links
       end
     end
@@ -9887,8 +10018,11 @@ module PortfolioManager
     #   @return [SOAP::SOAPString]
     # @!attribute [rw] xmlattr_description
     #   @return [SOAP::SOAPString]
+    # @!attribute [rw] xmlattr_group
+    #   @return [SOAP::SOAPString]
     class AdditionalIdentifierType
       AttrDescription = XSD::QName.new(nil, "description")
+      AttrGroup = XSD::QName.new(nil, "group")
       AttrId = XSD::QName.new(nil, "id")
       AttrName = XSD::QName.new(nil, "name")
       AttrStandardApproved = XSD::QName.new(nil, "standardApproved")
@@ -9927,6 +10061,14 @@ module PortfolioManager
 
       def xmlattr_description=(value)
         __xmlattr[AttrDescription] = value
+      end
+
+      def xmlattr_group
+        __xmlattr[AttrGroup]
+      end
+
+      def xmlattr_group=(value)
+        __xmlattr[AttrGroup] = value
       end
 
       def initialize
@@ -10336,6 +10478,91 @@ module PortfolioManager
         @licenseNumber = licenseNumber
         @licenseState = licenseState
         @licenseName = licenseName
+      end
+    end
+
+    # {}customMetric
+    # @!attribute [rw] name
+    #   @return [SOAP::SOAPString]
+    # @!attribute [rw] numeratorMetricId
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] denominatorDetailTypeId
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] xmlattr_id
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] xmlattr_unitOfMeasure
+    #   @return [SOAP::SOAPString]
+    class CustomMetric
+      AttrId = XSD::QName.new(nil, "id")
+      AttrUnitOfMeasure = XSD::QName.new(nil, "unitOfMeasure")
+
+      attr_accessor :name
+      attr_accessor :numeratorMetricId
+      attr_accessor :denominatorDetailTypeId
+
+      def __xmlattr
+        @__xmlattr ||= {}
+      end
+
+      def xmlattr_id
+        __xmlattr[AttrId]
+      end
+
+      def xmlattr_id=(value)
+        __xmlattr[AttrId] = value
+      end
+
+      def xmlattr_unitOfMeasure
+        __xmlattr[AttrUnitOfMeasure]
+      end
+
+      def xmlattr_unitOfMeasure=(value)
+        __xmlattr[AttrUnitOfMeasure] = value
+      end
+
+      def initialize(name = nil, numeratorMetricId = nil, denominatorDetailTypeId = nil)
+        @name = name
+        @numeratorMetricId = numeratorMetricId
+        @denominatorDetailTypeId = denominatorDetailTypeId
+        @__xmlattr = {}
+      end
+    end
+
+    # {}detailsTypes
+    class DetailsTypes < ::Array
+    end
+
+    # {}detailType
+    # @!attribute [rw] xmlattr_id
+    #   @return [SOAP::SOAPLong]
+    # @!attribute [rw] xmlattr_name
+    #   @return [SOAP::SOAPString]
+    class DetailType
+      AttrId = XSD::QName.new(nil, "id")
+      AttrName = XSD::QName.new(nil, "name")
+
+      def __xmlattr
+        @__xmlattr ||= {}
+      end
+
+      def xmlattr_id
+        __xmlattr[AttrId]
+      end
+
+      def xmlattr_id=(value)
+        __xmlattr[AttrId] = value
+      end
+
+      def xmlattr_name
+        __xmlattr[AttrName]
+      end
+
+      def xmlattr_name=(value)
+        __xmlattr[AttrName] = value
+      end
+
+      def initialize
+        @__xmlattr = {}
       end
     end
 

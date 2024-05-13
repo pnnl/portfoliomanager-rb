@@ -3,7 +3,7 @@
 `portfoliomanager-rb` provides clients for [ENERGY STAR Portfolio Manager Web Services](https://portfoliomanager.energystar.gov/webservices/home) for the Ruby programming language.
 
 A short rundown of some of the major features:
-* 100% API coverage (version 21.0).
+* 100% API coverage (version 22.0).
   ```ruby
   test_client = PortfolioManager::Client::Test.new("SampleJohnDoeAccount", "Sample123")
 
