@@ -38,7 +38,7 @@ module PortfolioManager
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/connection/connect/post
           def accept_reject_pending_connection_requests(account_id, sharing_response)
-            request(Net::HTTP::Post, path_for("connect", "account", account_id), {}, {}, sharing_response, "sharingResponse", PortfolioManager::Xml::SharingResponseType, basic_auth: true)
+            request(Net::HTTP::Post, path_for("connect", "account", account_id), {}, {}, sharing_response, "sharingResponse", PortfolioManager::Xml::ResponseType, basic_auth: true)
           end
 
           # Accept/Reject Pending Meter Share Requests
@@ -54,7 +54,7 @@ module PortfolioManager
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/connection/shareMeter/post
           def accept_reject_pending_meter_share_requests(meter_id, sharing_response)
-            request(Net::HTTP::Post, path_for("share", "meter", meter_id), {}, {}, sharing_response, "sharingResponse", PortfolioManager::Xml::SharingResponseType, basic_auth: true)
+            request(Net::HTTP::Post, path_for("share", "meter", meter_id), {}, {}, sharing_response, "sharingResponse", PortfolioManager::Xml::ResponseType, basic_auth: true)
           end
 
           # Accept/Reject Pending Property Share Requests
@@ -70,7 +70,7 @@ module PortfolioManager
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/connection/shareProperty/post
           def accept_reject_pending_property_share_requests(property_id, sharing_response)
-            request(Net::HTTP::Post, path_for("share", "property", property_id), {}, {}, sharing_response, "sharingResponse", PortfolioManager::Xml::SharingResponseType, basic_auth: true)
+            request(Net::HTTP::Post, path_for("share", "property", property_id), {}, {}, sharing_response, "sharingResponse", PortfolioManager::Xml::ResponseType, basic_auth: true)
           end
 
           # Disconnect From Customer
