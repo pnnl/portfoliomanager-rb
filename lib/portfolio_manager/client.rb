@@ -123,18 +123,20 @@ module PortfolioManager
 
           response = http.request(request)
 
+          response_body_utf8 = response.body.force_encoding("UTF-8")
+
           log(INFO, "Response:\n" + ([
             "Protocol: HTTP/#{response.http_version}",
             "URI: #{response.uri}",
             "Code: #{response.code}",
             "Message: #{response.message}",
-            "Body: #{response.body}",
+            "Body: #{response_body_utf8}",
           ]).compact.collect { |s|
             "\t#{s}"
           }.join("\n")) if @debug
 
-          if response.body.start_with?("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>")
-            PortfolioManager::Mapper.instance.xml2obj(response.body, klass)
+          if response_body_utf8.start_with?("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>")
+            PortfolioManager::Mapper.instance.xml2obj(response_body_utf8, klass)
           else
             raise PortfolioManager::HTTPResponseError.new(response)
           end
