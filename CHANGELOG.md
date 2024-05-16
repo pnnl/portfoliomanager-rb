@@ -16,15 +16,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update from v18 to v21.
 
 ## [0.0.3] - 2024-05-13
+### Changed
 - Update from v21 to v22.
 
 ## [0.0.4] - 2024-05-14
+### Changed
 - Fix return value classes for `PortfolioManager::Services::Connection::ConnectionShare::Live#accept_reject_pending_connection_requests`, `PortfolioManager::Services::Connection::ConnectionShare::Live#accept_reject_pending_meter_share_requests`, and `PortfolioManager::Services::Connection::ConnectionShare::Live#accept_reject_pending_property_share_requests` methods.
 
 ## [0.0.5] - 2024-05-15
+### Changed
 - Force encoding of HTTP response body to be UTF-8.
 
 ## [0.0.6] - 2024-05-16
+### Added
 - Add support for proxy servers.
 
 [Unreleased]: https://github.com/pnnl/portfoliomanager-rb/compare/v0.0.1...HEAD
