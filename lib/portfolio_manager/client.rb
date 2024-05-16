@@ -88,6 +88,8 @@ module PortfolioManager
       def request(verb = Net::HTTP::Get, path = "/", params = {}, initheader = {}, obj = nil, elename = nil, klass = nil, **options)
         uri = url_for(path, params)
 
+        proxy_uri = uri.find_proxy
+
         request = verb.new(uri, initheader)
 
         request["Accept"] = "application/xml, text/xml"
@@ -106,7 +108,7 @@ module PortfolioManager
           end
         end
 
-        Net::HTTP.start(uri.host, uri.port, use_ssl: uri.is_a?(URI::HTTPS)) do |http|
+        Net::HTTP.start(uri.host, uri.port, proxy_uri.nil? ? nil : proxy_uri.host, proxy_uri.nil? ? nil : proxy_uri.port, use_ssl: uri.is_a?(URI::HTTPS)) do |http|
           log(INFO, "Request:\n" + ([
             "Protocol: HTTP/#{Net::HTTP.version_1_2? ? "1.2" : "1.1"}",
             "Method: #{verb.name.split("::")[-1].upcase}",

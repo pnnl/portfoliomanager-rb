@@ -24,9 +24,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.5] - 2024-05-15
 - Force encoding of HTTP response body to be UTF-8.
 
+## [0.0.6] - 2024-05-16
+- Add support for proxy servers.
+
 [Unreleased]: https://github.com/pnnl/portfoliomanager-rb/compare/v0.0.1...HEAD
 [0.0.1]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.1
 [0.0.2]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.2
 [0.0.3]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.3
 [0.0.4]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.4
 [0.0.5]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.5
+[0.0.6]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.6
