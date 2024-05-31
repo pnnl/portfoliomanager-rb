@@ -85,6 +85,7 @@ module PortfolioManager
       # @return [Object]
       # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
       # @raise [PortfolioManager::HTTPResponseError]
+      # @see https://portfoliomanager.energystar.gov/webservices/home/errors
       def request(verb = Net::HTTP::Get, path = "/", params = {}, initheader = {}, obj = nil, elename = nil, klass = nil, **options)
         uri = url_for(path, params)
 
@@ -138,7 +139,7 @@ module PortfolioManager
           }.join("\n")) if @debug
 
           if response_body_utf8.start_with?("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>")
-            PortfolioManager::Mapper.instance.xml2obj(response_body_utf8, klass)
+            PortfolioManager::Mapper.instance.xml2obj(response_body_utf8, response.code.start_with?("2") ? klass : PortfolioManager::Xml::ResponseType)
           else
             raise PortfolioManager::HTTPResponseError.new(response)
           end
