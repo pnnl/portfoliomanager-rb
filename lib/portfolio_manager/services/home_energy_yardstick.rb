@@ -38,7 +38,7 @@ module PortfolioManager
           # - Wood
           #
           # @param hey [PortfolioManager::Xml::HeyType]
-          # @return [PortfolioManager::Xml::PropertyMetricsType]
+          # @return [PortfolioManager::Xml::PropertyMetricsType, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/hey/hey/post

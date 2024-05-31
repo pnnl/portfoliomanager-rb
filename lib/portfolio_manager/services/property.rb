@@ -169,6 +169,131 @@ module PortfolioManager
         end
       end
 
+      # Custom Metrics
+      module CustomMetrics
+        # Live Environment
+        module Live
+          # Get Custom Metrics
+          #
+          # This web service returns a list of custom metrics for a specific
+          # property. A maximum of 3 custom metrics per property can be defined.
+          # The property must already be shared with you.
+          #
+          # @param property_id [Integer]
+          # @return [PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/property/customMetrics/get
+          def get_custom_metrics(property_id)
+            request(Net::HTTP::Get, path_for("property", property_id, "customMetrics"), {}, {}, nil, nil, PortfolioManager::Xml::ResponseType, basic_auth: true)
+          end
+
+          # Get Custom Metric
+          #
+          # This web service returns information for a specific custom metric
+          # for a given property. The property must already be shared with you.
+          #
+          # @param property_id [Integer]
+          # @param custom_metric_slot [Integer]
+          # @return [PortfolioManager::Xml::CustomMetric, PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/property/customMetric/get
+          def get_custom_metric(property_id, custom_metric_slot)
+            request(Net::HTTP::Get, path_for("property", property_id, "customMetrics", custom_metric_slot), {}, {}, nil, nil, PortfolioManager::Xml::CustomMetric, basic_auth: true)
+          end
+
+          # Add Custom Metric
+          #
+          # This web service adds a new custom metric based on the information
+          # provided in the XML request for a specified property. The property
+          # must already be shared with you. A maximum of 3 custom metrics per
+          # property can be defined.
+          #
+          # @param property_id [Integer]
+          # @param custom_metric_slot [Integer]
+          # @param custom_metric [PortfolioManager::Xml::CustomMetric]
+          # @return [PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/property/customMetric/post
+          def add_custom_metric(property_id, custom_metric_slot, custom_metric)
+            request(Net::HTTP::Post, path_for("property", property_id, "customMetrics", custom_metric_slot), {}, {}, custom_metric, "customMetric", PortfolioManager::Xml::ResponseType, basic_auth: true)
+          end
+
+          # Edit Custom Metric
+          #
+          # This web service updates a specific custom metric based on the
+          # information provided in the XML request for a given property. The
+          # property must already be shared with you.
+          #
+          # @param property_id [Integer]
+          # @param custom_metric_slot [Integer]
+          # @param custom_metric [PortfolioManager::Xml::CustomMetric]
+          # @return [PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/property/customMetric/put
+          def edit_custom_metric(property_id, custom_metric_slot, custom_metric)
+            request(Net::HTTP::Put, path_for("property", property_id, "customMetrics", custom_metric_slot), {}, {}, custom_metric, "customMetric", PortfolioManager::Xml::ResponseType, basic_auth: true)
+          end
+
+          # Delete Custom Metric
+          #
+          # This web service deletes a specific custom metric for a given
+          # property. The property must already be shared with you.
+          #
+          # @param property_id [Integer]
+          # @param custom_metric_slot [Integer]
+          # @return [PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/property/customMetric/delete
+          def delete_custom_metric(property_id, custom_metric_slot)
+            request(Net::HTTP::Delete, path_for("property", property_id, "customMetrics", custom_metric_slot), {}, {}, nil, nil, PortfolioManager::Xml::ResponseType, basic_auth: true)
+          end
+
+          # Get Available Property Use Details (for Custom Metrics)
+          #
+          # This web service returns a list of all the property use details of a
+          # given property that can be used to define in a custom metric (the
+          # denominator of a custom metric). The property must already be shared
+          # with you.
+          #
+          # @param property_id [Integer]
+          # @return [PortfolioManager::Xml::DetailsTypes, PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/property/availablePropertyUseDetails/get
+          def get_available_property_use_details_for_custom_metrics(property_id)
+            request(Net::HTTP::Get, path_for("property", property_id, "customMetrics", "availablePropertyUseDetails"), {}, {}, nil, nil, PortfolioManager::Xml::DetailsTypes, basic_auth: true)
+          end
+
+          # Get Available Metrics List
+          #
+          # This web service returns a list of all available metrics that can be
+          # used to define in a custom metric (the numerator of a custom
+          # metric).
+          #
+          # @param group_ids [nil, Array<Integer>]
+          # @param available_to_custom_metrics [nil, Boolean]
+          # @return [PortfolioManager::Xml::ReportMetrics, PortfolioManager::Xml::ResponseType]
+          # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
+          # @raise [PortfolioManager::HTTPResponseError]
+          # @see https://portfoliomanager.energystar.gov/webservices/home/api/property/availableMetricsList/get
+          def get_available_metrics_list(group_ids = nil, available_to_custom_metrics = nil)
+            request(Net::HTTP::Get, path_for("reports", "metrics"), {
+              "groupIds" => (group_ids.nil? || group_ids.empty?) ? nil : group_ids.collect(&:to_s).join(","),
+              "availableToCustomMetrics" => available_to_custom_metrics,
+            }, {}, nil, nil, PortfolioManager::Xml::ReportMetrics, basic_auth: true)
+          end
+        end
+
+        # Test Environment
+        module Test
+        end
+      end
+
       # Design
       module Design
         # Live Environment
@@ -929,6 +1054,7 @@ module PortfolioManager
         module Live
           include PortfolioManager::Services::Property::Property::Live
           include PortfolioManager::Services::Property::Design::Live
+          include PortfolioManager::Services::Property::CustomMetrics::Live
           include PortfolioManager::Services::Property::ElectricDistributionUtility::Live
           include PortfolioManager::Services::Property::PowerGenerationPlant::Live
           include PortfolioManager::Services::Property::InternationalWeatherStation::Live
@@ -941,6 +1067,7 @@ module PortfolioManager
         module Test
           include PortfolioManager::Services::Property::Property::Test
           include PortfolioManager::Services::Property::Design::Test
+          include PortfolioManager::Services::Property::CustomMetrics::Test
           include PortfolioManager::Services::Property::ElectricDistributionUtility::Test
           include PortfolioManager::Services::Property::PowerGenerationPlant::Test
           include PortfolioManager::Services::Property::InternationalWeatherStation::Test

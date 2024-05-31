@@ -18,13 +18,15 @@ module PortfolioManager
           # used in a report template.
           #
           # @param group_ids [nil, Array<Integer>]
-          # @return [PortfolioManager::Xml::ReportMetrics]
+          # @param available_to_custom_metrics [nil, Boolean]
+          # @return [PortfolioManager::Xml::ReportMetrics, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/availableMetricsList/get
-          def get_available_metrics_list(group_ids = nil)
+          def get_available_metrics_list(group_ids = nil, available_to_custom_metrics = nil)
             request(Net::HTTP::Get, path_for("reports", "metrics"), {
               "groupIds" => (group_ids.nil? || group_ids.empty?) ? nil : group_ids.collect(&:to_s).join(","),
+              "availableToCustomMetrics" => available_to_custom_metrics,
             }, {}, nil, nil, PortfolioManager::Xml::ReportMetrics, basic_auth: true)
           end
 
@@ -71,7 +73,7 @@ module PortfolioManager
           # template must be owned by you.
           #
           # @param template_id [Integer]
-          # @return [PortfolioManager::Xml::ReportTemplateType]
+          # @return [PortfolioManager::Xml::ReportTemplateType, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/template/get
@@ -163,7 +165,7 @@ module PortfolioManager
           # template for a specific report. The report must be owned by you.
           #
           # @param report_id [Integer]
-          # @return [PortfolioManager::Xml::Report]
+          # @return [PortfolioManager::Xml::Report, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/report/get
@@ -205,12 +207,12 @@ module PortfolioManager
           #
           # @param report_id [Integer]
           # @param type ["EXCEL", "XML"]
-          # @return [PortfolioManager::Xml::Report]
+          # @return [PortfolioManager::Xml::Report, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/reportResults/get
           def get_report_results(report_id, type = "XML")
-            request(Net::HTTP::Get, path_for("reports", report_id), {
+            request(Net::HTTP::Get, path_for("reports", report_id, "download"), {
               "type" => type,
             }, {}, nil, nil, PortfolioManager::Xml::Report, basic_auth: true)
           end
@@ -257,7 +259,7 @@ module PortfolioManager
           #   available for download.
           #
           # @param report_id [Integer]
-          # @return [PortfolioManager::Xml::ReportStatusDef]
+          # @return [PortfolioManager::Xml::ReportStatusDef, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/reportStatus/get
@@ -298,7 +300,7 @@ module PortfolioManager
           #
           # @param customer_id [Integer]
           # @param data_request_id [Integer]
-          # @return [PortfolioManager::Xml::DataRequest]
+          # @return [PortfolioManager::Xml::DataRequest, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/customerDataRequest/get
@@ -358,7 +360,7 @@ module PortfolioManager
           #
           # @param customer_id [Integer]
           # @param data_response_id [Integer]
-          # @return [PortfolioManager::Xml::DataResponse]
+          # @return [PortfolioManager::Xml::DataResponse, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/dataResponse/get
@@ -418,7 +420,7 @@ module PortfolioManager
           # @param customer_id [Integer]
           # @param data_response_id [Integer]
           # @param type ["EXCEL", "XML"]
-          # @return [PortfolioManager::Xml::ResponseStatus]
+          # @return [PortfolioManager::Xml::ResponseStatus, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/downloadErrorsDataResponse/get
@@ -512,7 +514,7 @@ module PortfolioManager
           #
           # @param customer_id [Integer]
           # @param data_response_id [Integer]
-          # @return [PortfolioManager::Xml::ResponseStatus]
+          # @return [PortfolioManager::Xml::ResponseStatus, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/reporting/statusDataResponse/get

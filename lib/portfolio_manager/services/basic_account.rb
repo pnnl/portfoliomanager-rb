@@ -85,7 +85,7 @@ module PortfolioManager
           # This web service retrieves your account information that includes
           # your username, password, and contact information.
           #
-          # @return [PortfolioManager::Xml::AccountType]
+          # @return [PortfolioManager::Xml::AccountType, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/account/account/get
@@ -100,7 +100,7 @@ module PortfolioManager
           # billboard display, see the "Account" and "Property" documentation
           # sections.
           #
-          # @return [PortfolioManager::Xml::BillboardMetricsType]
+          # @return [PortfolioManager::Xml::BillboardMetricsType, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/account/billboardMetricList/get
@@ -160,7 +160,7 @@ module PortfolioManager
           # identifier to the newly created account and a link to the
           # corresponding web service to retrieve it.
           #
-          # @param account [PortfolioManager::Xml::AccountType, PortfolioManager::Xml::ResponseType]
+          # @param account [PortfolioManager::Xml::AccountType]
           # @return [PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/test/api/account/account/post
@@ -181,7 +181,7 @@ module PortfolioManager
           # Note that there is no validation performed on the specified display
           # order.
           #
-          # @param custom_field [PortfolioManager::Xml::CustomField, PortfolioManager::Xml::ResponseType]
+          # @param custom_field [PortfolioManager::Xml::CustomField]
           # @return [PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
@@ -268,7 +268,7 @@ module PortfolioManager
           # data exchange service offerings such as terms and conditions,
           # supported fuel types, etc.
           #
-          # @return [PortfolioManager::Xml::DataExchangeSettings]
+          # @return [PortfolioManager::Xml::DataExchangeSettings, PortfolioManager::Xml::ResponseType]
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/api/account/settings/get
