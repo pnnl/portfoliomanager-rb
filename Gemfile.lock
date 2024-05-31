@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    portfoliomanager-rb (0.0.6)
+    portfoliomanager-rb (0.0.7)
       logger-application (~> 0.0.2)
       soap4r-ng (~> 2.0.4)
 
