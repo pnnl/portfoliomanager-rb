@@ -3410,7 +3410,6 @@ module PortfolioManager
     Registry.register(
       :class => PortfolioManager::Xml::CustomFieldList::CustomField,
       :schema_name => XSD::QName.new(nil, "customField"),
-      :is_anonymous => true,
       :schema_qualified => false,
       :schema_attribute => {
         XSD::QName.new(nil, "name") => "SOAP::SOAPString"
