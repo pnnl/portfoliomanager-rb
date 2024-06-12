@@ -297,7 +297,7 @@ module PortfolioManager
           # @raise [PortfolioManager::HTTPBasicCredentialsNotFoundError]
           # @raise [PortfolioManager::HTTPResponseError]
           # @see https://portfoliomanager.energystar.gov/webservices/home/test/api/connection/inviteProperty/post
-          def send_meter_share_request_from_test_environment(dx_account_id, property_id, access_level = "READ_WRITE")
+          def send_property_share_request_from_test_environment(dx_account_id, property_id, access_level = "READ_WRITE")
             request(Net::HTTP::Post, path_for("invite", "account", dx_account_id, "property", property_id), {
               "accessLevel" => access_level,
             }, {}, nil, nil, PortfolioManager::Xml::ResponseType, basic_auth: true)
