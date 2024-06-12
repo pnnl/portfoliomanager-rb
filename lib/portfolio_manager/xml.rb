@@ -9414,7 +9414,7 @@ module PortfolioManager
         end
 
         def initialize(*arg)
-          super
+          super(*arg)
           @__xmlattr = {}
         end
       end

@@ -46,6 +46,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix error handling in `PortfolioManager::Client::Base#request`.
 - Fix return value classes for `PortfolioManager::Xml::ResponseType`.
 
+## [0.0.8] - 2024-06-12
+
+### Changed
+- Fix value handling in `PortfolioManager::Xml::CustomFieldList::CustomField`.
+
 [Unreleased]: https://github.com/pnnl/portfoliomanager-rb/compare/v0.0.1...HEAD
 [0.0.1]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.1
 [0.0.2]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.2
@@ -54,3 +59,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.0.5]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.5
 [0.0.6]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.6
 [0.0.7]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.7
+[0.0.8]: https://github.com/pnnl/portfoliomanager-rb/releases/tag/v0.0.7
