@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> This repository has been archived and is no longer maintained.
+> The code is provided for historical reference and may contain unpatched or unknown vulnerabilities.
+> It should not be used in production systems.
+
 # ENERGY STAR Portfolio Manager - Web Services Clients in Ruby
 
 `portfoliomanager-rb` provides clients for [ENERGY STAR Portfolio Manager Web Services](https://portfoliomanager.energystar.gov/webservices/home) for the Ruby programming language.
