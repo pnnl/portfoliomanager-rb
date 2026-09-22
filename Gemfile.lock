@@ -25,9 +25,7 @@ GEM
       rspec-support (~> 3.11.0)
     rspec-support (3.11.0)
     soap4r-ng (2.0.4)
-    webrick (1.7.0)
-    yard (0.9.27)
-      webrick (~> 1.7.0)
+    yard (0.9.44)
 
 PLATFORMS
   ruby
